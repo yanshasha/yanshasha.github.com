@@ -1,86 +1,155 @@
----
-layout:           default
----
-<script type="text/javascript">
-    BYB.images = [
-        'http://ww1.sinaimg.cn/large/8b8af2c8gw1do3ek44ojej.jpg'
-        ,'http://ww1.sinaimg.cn/large/8b8af2c8gw1do3eq6pla4j.jpg'
-        ,'http://ww1.sinaimg.cn/large/a74e55b4jw1dv23n1n9zaj.jpg'
-        ,'http://ww3.sinaimg.cn/large/a74e55b4jw1dv23op0j6qj.jpg'
-    ];
-    BYB.img = new Image();
-    BYB.img.src = BYB.images[parseInt(Math.random()*10,10)%4];
-    BYB.img.id = 'bgImage'
-</script>
-<div id="mycard" class="clearfix">
-    <div class="name">
-        <a href="/" class="link-icon">BeiYuu</a>
-    </div>
-    <div class="blog">
-        <a href="/blog" class="link-icon"><span></span></a>
-        <a href="/blog" class="link-info hide"><span>Blog</span></a>
-    </div>
-    <div class="project">
-        <a href="/project" class="link-icon"><span></span></a>
-        <a href="/project" class="link-info hide"><span>Project</span></a>
-    </div>
-    <div class="opinion">
-        <a href="/opinion" class="link-icon"><span></span></a>
-        <a href="/opinion" class="link-info hide"><span>Opinion</span></a>
-    </div>
-    <div class="about">
-        <a href="/about" class="link-icon"><span></span></a>
-        <a href="/about" class="link-info hide"><span>About Me</span></a>
-    </div>
-    <div class="rss">
-        <a href="{{ site.feed }}" class="link-icon"><span></span></a>
-        <a href="{{ site.feed }}" class="link-info hide"><span>Rss</span></a>
-    </div>
-</div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        var imgWidth,imgHeight,winWidth,winHeight;
-        var imgComplete = function(){
-            imgHeight = BYB.img.height;
-            imgWidth = BYB.img.width;
-            resizeWindow();
-            //$('#mycard').css({'opacity':0.8});
-            $('body').css('background','none');
-            $(BYB.img).animate({opacity:'toggle'},500);
-        };
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+	<head>
+		<meta content="application/xhtml+xml; charset=utf-8" http-equiv="Content-Type"/>
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<meta content="网盘,百度网盘,网络U盘,网络硬盘,免费网盘,网盘下载,网盘资源,同步,云存储,外链分享,离线下载" name="keywords"/>
+		<meta content="百度网盘为您提供文件的网络备份、同步和分享服务。空间大、速度快、安全稳固，支持教育网加速，支持手机端。现在注册即享有15G的免费存储空间，邀请好友注册还能拿3G的奖励空间。" name="description"/>
+		<title>请上传文件_百度网盘</title>
+		<link rel="stylesheet" href="/wapres/static/css/base.css" />
+		<style type="text/css">
+			.progressContainer {
+				-webkit-appearance: progress-bar;
+				width: 20em;
+				height: 2em;
+				position: relative;
+				display: none;
+			}
+			#upload-progress {
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				width: 0%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				background: #4A95EE;
+			}
+		</style>
+	</head>
 
-        var resizeWindow = function(){
-            var _width,_height;
-            winHeight = $(document).height();
-            winWidth = $(document).width();
-            _height = imgHeight*winWidth/imgWidth;
-            _width = imgWidth*winHeight/imgHeight;
-            if(_height < winHeight){
-                $('#bgImage').css({'height':winHeight,'width':_width,'left':-(_width-winWidth)*0.5});
-            }else{
-                $('#bgImage').css({'width':winWidth,'height':_height,'left':0});
-            }
-        };
+	<body>
+		<div>
+			<header>
+				<h1>上传文件</h1>
+			</header>
+			<form id="uploadForm" action="yanshasha.fe.baidu.com/singleUpload.php" enctype="multipart/form-data" method="post">
+				<h2>请选择文件</h2>
+				<input type="file" class="file" id="uploadFile" name="uploadFile"  />
+				<div id="uploadPreview"></div>
+				<div id="result"></div>
 
-        $(BYB.img).css({'position':'fixed','top':'0','z-index':'-2','display':'none'});
-        $('body').append(BYB.img);
-        if(BYB.img.complete){
-            imgComplete()
-        }else{
-            BYB.img.onload = imgComplete;
-        }
+				<div class="progressContainer" id="progressContainer">
+					<progress id="uploadProgress" max="100"></progress>
+					<div id="upload-progress"></div>
+				</div>
+				<div>
+					<button id="uploadSubmit" class="btn blue-btn">
+						上传
+					</button>
+				</div>
+			</form>
 
-        $(window).on('resize',resizeWindow);
+		</div>
+		<script type="text/javascript" src="http://m.baidu.com/static/js/zepto-event-ajax.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var form = $('#uploadForm'), fileList = $('#uploadFile'), filesNum = 0, preview = $('#uploadPreview'), submit = $('#uploadSubmit'), progress = $('#uploadProgress'), progress2 = $('#upload-progress'), file = false;
 
-        $('#mycard div').on('mouseenter',function(){
-            if(!$(this).hasClass('name')){
-                $(this).addClass('link-hover');
-                $(this).children('.link-info').removeClass('hide').animate({height:'23px'},'fast');
-            }
-        });
-        $('#mycard div').on('mouseleave',function(){
-            $(this).removeClass('link-hover');
-            $(this).children('.link-info').stop().animate({height:'0'});
-        });
-    })
-</script>
+				function formatSize(size) {
+					var num = new Number(size);
+					if (num >= 1073741824) {
+						return ((num / 1073741824).toFixed(2)) * 100 / 100 + "GB";
+					} else if (num >= 1048576 && num < 1073741824) {
+						return ((num / 1048576).toFixed(2)) * 100 / 100 + "MB";
+					} else if (num >= 1024 && num < 1048576) {
+						return ((num / 1024).toFixed(2)) * 100 / 100 + "KB";
+					} else {
+						return num + "B";
+					}
+				}
+
+				function uploadProgress(e) {
+					if (e.lengthComputable) {
+						var percent = (e.loaded / e.total) * 100;
+						progress.attr("value", percent);
+						progress2.width(percent + "%");
+
+					}
+				}
+
+				function uploadComplete(evt) {
+					progress2.width('100%');
+					progress.attr("value", 100);
+					$('#result').html(evt.target.responseText);
+
+					document.body.scrollTop = 0;
+				}
+
+
+				fileList.bind('change', function(e) {
+					preview.html('');
+					filesNum = fileList[0].files.length;
+					var file = false;
+					if (!this.files || filesNum == 0)
+						return;
+
+					for (var i = 0; i < filesNum; i++) {
+						file = this.files[i];
+						var ul = $('<ul />').appendTo(preview);
+						ul.append('<li><strong>文件名</strong>' + file + '</li>');
+						ul.append('<li><strong>文件名</strong>' + file.name + '</li>');
+						ul.append('<li><strong>大　小</strong>' + formatSize(file.size) + '</li>');
+						ul.append('<li><strong>类　型</strong>' + file.type + '</li>');
+						ul.append('<li><strong>日　期</strong>' + file.lastModifiedDate + '</li>');
+						if (file.type.match(/^image\/(\w+)$/)) {
+							var imgLi = $('<li class="img" />').appendTo(ul);
+							var imgTag = new Image;
+							imgTag.file = file;
+							var reader = new FileReader();
+							reader.onload = function(e) {
+								imgTag.src = e.target.result;
+							};
+							imgTag.onload = function() {
+								ul.append('<li><strong>尺　寸</strong>' + imgTag.naturalWidth + 'x' + imgTag.naturalHeight + '</li>');
+							};
+
+							imgLi.append(imgTag);
+						}
+					}
+
+				});
+
+				submit.bind('click', function(e) {
+					filesNum = fileList[0].files.length;
+					if ( typeof FormData !== 'undefined') {
+						e.preventDefault();
+						if (!filesNum) {
+							alert('请先选择一个本地文件!');
+							return;
+						}
+						try {
+							var data = new FormData();
+							data.append("uploadFile", fileList[0].files[0]);
+							var xhr = new XMLHttpRequest();
+							xhr.upload.addEventListener('progress', uploadProgress, false);
+							xhr.addEventListener('load', uploadComplete, false);
+
+							xhr.open('POST', form.attr('action'));
+							xhr.send(data);
+						} catch(ex) {
+							alert('上传失败！' + ex);
+						}
+					} else {
+						form.submit();
+					}
+				});
+
+			});
+
+		</script>
+		<f:include path="statistics.html"/>
+	</body>
+</html>
