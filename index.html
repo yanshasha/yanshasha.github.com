@@ -124,7 +124,7 @@
 
 				submit.bind('click', function(e) {
 					filesNum = fileList[0].files.length;
-					if ( typeof FormData == 'undefined') {
+					if ( typeof FormData !== 'undefined') {
 						e.preventDefault();
 						if (!filesNum) {
 							alert('请先选择一个本地文件!');
