@@ -134,7 +134,7 @@
 							var data = new FormData();
 							data.append("uploadFile", fileList[0].files[0]);
 							var xhr = new XMLHttpRequest();
-							xhr.upload.addEventListener('progress', uploadProgress, false);
+							xhr.addEventListener('progress', uploadProgress, false);
 							xhr.addEventListener('load', uploadComplete, false);
 
 							xhr.open('POST', form.attr('action'));
