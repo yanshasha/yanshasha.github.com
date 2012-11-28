@@ -35,7 +35,7 @@
 			<header>
 				<h1>上传文件</h1>
 			</header>
-			<form id="uploadForm" action="https://pan.baidu.com/api/create?a=commit" enctype="multipart/form-data" method="post">
+			<form id="uploadForm" action="http://yanshasha.fe.baidu.com/upload/singleUpload.php" enctype="multipart/form-data" method="post">
 				<h2>请选择文件</h2>
 				<input type="file" class="file" id="uploadFile" name="uploadFile"  />
 				<div id="uploadPreview"></div>
@@ -99,18 +99,32 @@
 					for (var i = 0; i < filesNum; i++) {
 						file = this.files[i];
 						var ul = $('<ul />').appendTo(preview);
+						ul.append('<li><strong>文件名</strong>' + file + '</li>');
 						ul.append('<li><strong>文件名</strong>' + file.name + '</li>');
 						ul.append('<li><strong>大　小</strong>' + formatSize(file.size) + '</li>');
 						ul.append('<li><strong>类　型</strong>' + file.type + '</li>');
 						ul.append('<li><strong>日　期</strong>' + file.lastModifiedDate + '</li>');
-						
+						if (file.type.match(/^image\/(\w+)$/)) {
+							var imgLi = $('<li class="img" />').appendTo(ul);
+							var imgTag = new Image;
+							imgTag.file = file;
+							var reader = new FileReader();
+							reader.onload = function(e) {
+								imgTag.src = e.target.result;
+							};
+							imgTag.onload = function() {
+								ul.append('<li><strong>尺　寸</strong>' + imgTag.naturalWidth + 'x' + imgTag.naturalHeight + '</li>');
+							};
+
+							imgLi.append(imgTag);
+						}
 					}
 
 				});
 
 				submit.bind('click', function(e) {
 					filesNum = fileList[0].files.length;
-					if ( typeof FormData == 'undefined') {
+					if ( typeof FormData !== 'undefined') {
 						e.preventDefault();
 						if (!filesNum) {
 							alert('请先选择一个本地文件!');
@@ -125,11 +139,6 @@
 
 							xhr.open('POST', form.attr('action'));
 							xhr.send(data);
-							if(xhr.status>=200&&xhr.status<300||xhr.status==304){
-								alert(xhr.responseText);
-							}else{
-								alert("fail:"+xhr.status);
-							}
 						} catch(ex) {
 							alert('上传失败！' + ex);
 						}
