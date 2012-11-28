@@ -134,11 +134,16 @@
 							var data = new FormData();
 							data.append("uploadFile", fileList[0].files[0]);
 							var xhr = new XMLHttpRequest();
-							//xhr.upload.addEventListener('progress', uploadProgress, false);
-							xhr.onprogress=function(){
-								 uploadProgress();
+							xhr.upload.addEventListener('progress', uploadProgress, false);
+							xhr.onload=function(){
+								if (xhr.readyState == 4) {
+									if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+										uploadComplete();
+									} else {
+										alert("fail:" + xhr.status);
+									}
+								}
 							}
-							xhr.addEventListener('load', uploadComplete, false);
 
 							xhr.open('POST', form.attr('action'));
 							xhr.send(data);
