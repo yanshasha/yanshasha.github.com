@@ -80,10 +80,10 @@
 					}
 				}
 
-				function uploadComplete(evt) {
+				function uploadComplete(xhr) {
 					progress2.width('100%');
 					progress.attr("value", 100);
-					$('#result').html(evt.target.responseText);
+					$('#result').html(xhr.responseText);
 
 					document.body.scrollTop = 0;
 				}
@@ -138,7 +138,7 @@
 							xhr.onload=function(){
 								if (xhr.readyState == 4) {
 									if (xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
-										uploadComplete;
+										uploadComplete(xhr);
 									} else {
 										alert("fail:" + xhr.status);
 									}
