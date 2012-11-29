@@ -7,7 +7,6 @@
 		<meta content="网盘,百度网盘,网络U盘,网络硬盘,免费网盘,网盘下载,网盘资源,同步,云存储,外链分享,离线下载" name="keywords"/>
 		<meta content="百度网盘为您提供文件的网络备份、同步和分享服务。空间大、速度快、安全稳固，支持教育网加速，支持手机端。现在注册即享有15G的免费存储空间，邀请好友注册还能拿3G的奖励空间。" name="description"/>
 		<title>请上传文件_百度网盘</title>
-		<link rel="stylesheet" href="/wapres/static/css/base.css" />
 		<style type="text/css">
 			.progressContainer {
 				-webkit-appearance: progress-bar;
@@ -105,7 +104,7 @@
 							var ul = $('<ul />').appendTo(preview);
 
 							ul.append('<li><strong>文件名</strong>' + file.name + '</li>');
-							ul.append('<li><strong>大　小</strong>' + mpan.formatSize(file.size) + '</li>');
+							ul.append('<li><strong>大　小</strong>' + formatSize(file.size) + '</li>');
 							ul.append('<li><strong>类　型</strong>' + file.type + '</li>');
 							ul.append('<li><strong>日　期</strong>' + file.lastModifiedDate + '</li>');
 						
@@ -130,7 +129,7 @@
 				submit.bind('click', function(e) {
 					filesNum = fileList[0].files.length;
 //var url = "http://yanshasha.fe.baidu.com/upload/singleUpload.php" enctype="multipart/form-data" ;
-var url = "http://pcs.baidu.com:8090/rest/2.0/pcs/file?method=upload&app_id=250528&dir=%2f%E5%9B%BE%E7%89%87%E5%BA%93&filename=pcs.jpg&ondup=newcopy" + "&BDUSS=" + mpan.getCookie("BDUSS");
+var url = "http://pcs.baidu.com:8090/rest/2.0/pcs/file?method=upload&app_id=250528&dir=%2f%E5%9B%BE%E7%89%87%E5%BA%93&filename=pcs.jpg&ondup=newcopy";
 					form[0].action = url;
 					if ( typeof FormData !== 'undefined') {
 						e.preventDefault();
@@ -170,6 +169,5 @@ var url = "http://pcs.baidu.com:8090/rest/2.0/pcs/file?method=upload&app_id=2505
 			});
 
 		</script>
-		<f:include path="statistics.html"/>
 	</body>
 </html>
