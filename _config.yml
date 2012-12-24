@@ -1,17 +1,3 @@
-auto:	          true
-
-markdown:         rdiscount
-pygments:         true
-paginate:         6
-permalink:        /:title
-
-title:            blog.yanshasha.com
-url:              http://blog.yanshasha.com
-feed:             /atom.xml
-author:
-    name:         Yanshasha
-description:      "Yanshasha\'s Blog"
-author_info:      <a href="http://blog.yanshasha.com/about">Yanshasha</a>
-
-copyright:
-    - Design by <a href="http://blog.yanshasha.com/about" title="Yanshasha" target="_blank">Yanshasha</a> &copy; Copyright 2012
+auto : true
+markdown : rdiscount
+permalink : /:categories/:title/

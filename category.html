@@ -2,9 +2,16 @@
 layout: default
 title: Hx's weblog
 ---
+<h1>{{ page.title }}</h1>
 <h3>Recent Posts</h3>
 <ul>
 {% for post in site.posts %}
 <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+<h3>Categories</h3>
+<ul>
+{% for category in site.categories %}
+<li>{{ category[0] }}</li>
 {% endfor %}
 </ul>
