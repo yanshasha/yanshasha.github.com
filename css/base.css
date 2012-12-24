@@ -103,23 +103,17 @@ dd {
 		    transition: all 0.2s ease-in-out;
 }
 
-#nav{
+.main-nav{
 	margin-top: .7em;
 	overflow: hidden;
 }
 
-#nav ul{
+.main-nav ul{
 	margin: 0;
 	overflow: hidden;
 }
 
-#nav li{
-	display: block;
-	float: left;
-	width: 25%;
-}
-
-#nav li a{
+.main-nav li a{
 	text-transform: uppercase;
 	text-decoration: none;
 	letter-spacing: 2px;
@@ -132,7 +126,7 @@ dd {
 		    transition: all 0.3s ease-in-out;
 }
 
-#nav li a:hover{
+.main-nav li a:hover{
 	color: #fc6b35;
 	-webkit-transition: all 0.2s ease-in-out;
 	   -moz-transition: all 0.2s ease-in-out;
@@ -140,7 +134,7 @@ dd {
 		    transition: all 0.2s ease-in-out;
 }
 
-#nav li em{
+.main-nav li em{
 	display: block;
 	font-size: .85em;
 	font-weight: normal;
