@@ -18,8 +18,12 @@
   </head>
   <body>
     <div class="wrapper">
+    	<div class="side-box">
       <header>
-        <h1 class="header"><a href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+        <h1 class="header">
+        	<img src="{{ ASSET_PATH }}/images/avator.jpg" alt="言莎莎" class="avator"/>
+        	<a href="{{ HOME_PATH }}">{{ site.title }}</a>
+        </h1>
         <p class="header">{{ site.tagline }}</p>
         <ul>
           {% assign pages_list = site.pages %}
@@ -67,9 +71,12 @@
         </div><!-- misc -->
         {% endif %}
       </header>
+      </div>
 
-      <section>
-      {{ content }}
+      <section class="main-box">
+      	<div class="main-inner">
+	      {{ content }}
+	    </div>
       </section>
 
       <footer>
