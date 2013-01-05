@@ -39,8 +39,11 @@ h1, h2, h3 {
 
 h1, h2, h3 {
 	display: block;
-	border-bottom: 1px solid #ccc;
+	
 	padding-bottom: 5px;
+}
+h1{
+	border-bottom: 1px dashed #ccc;
 }
 
 h1 {
@@ -126,12 +129,7 @@ hr {
 /* Images */
 
 img {
-	position: relative;
-	margin: 0 auto;
-	max-width: 650px;
-	padding: 5px;
-	margin: 10px 0 32px 0;
-	border: 1px solid #ccc;
+	max-width:100%;
 }
 
 /* Code blocks */
@@ -198,14 +196,42 @@ td {
 	opacity: 1;
 }
 .side-box > header {
-	padding: 10% 0 0 20%;
+	padding: 10% 0 ;
+	
 }
-
-.avator {
+.avator-box{
+	width: 170px;
+	position:relative;
+	margin:0 auto;
+	padding: 5px;
+	border: 1px solid #ccc;
+}
+.avator-mask {
+	position:absolute;
+	width: 170px;
+	height: 130px;
+	top:0;
+	left:0;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
-	width: 160px;
+/*	background: -webkit-gradient(radial, center, center, from(rgba(255,0,0,1)), to(rgba(0,255,0,.25)));
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1e5799), color-stop(100%,#7db9e8)); 
+background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%,#7db9e8 100%);*/
+/* For WebKit */
+ background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,0,0,.1)), to(rgba(0,0,255,.25)));
+/* For Mozilla */
+ background: -moz-linear-gradient(top, rgba(255,0,0,1), rgba(0,0,255,.25));
+/* For lt IE8 */
+ filter: progid:DXImageTransform.Microsoft.gradient(gradientyype=0,
+startColorstr='#88ff0000', endColorstr='#3300ff00');
+/* For gt IE8 */
+ -moz-filter: progid:DXImageTransform.Microsoft.gradient(gradientyype=0,
+startColorstr='#88ff0000', endColorstr='#3300ff00');
+}
+.avator {	
+	display:block;
+	/*width: 170px;*/
 }
 
 p.header {
@@ -279,7 +305,7 @@ a.buttons:hover {
 	background: whiteSmoke;
 }
 .main-inner {
-	padding: 10px 20px;
+	margin: 2% 7% 2% 5%;
 }
 
 /* Footer */
