@@ -85,15 +85,108 @@ web apps和native apps相比的第二个优点是你的发布内容将更加自�
 我们只能再三的建议您密切关注由万维网联盟（W3C www.w3.org）和Web超文本应用技术工作组（WHATWG; www.whatwg.org）发起的革新。
 在这里你能发现大多数的未来web技术。
 
+**浏览器指标**
+Mobile Safari的默认行为是把页面内容缩放到适合屏幕的大小。这当然与在一个桌面浏览器或者在Opera Mini上看网页的浏览体验截然不同（在Opera Mini上，页面会重新排列组合，使得页面在小屏幕上变得可读性更强）。用户在一些特定手势的帮助下可以把屏幕缩放到他们可读的大小。这些手势包括向外捏放（放大），向内捏放（缩小），双击屏幕（聚焦一个特定页面元素）等。
 
+此外，在Mobile Safari上，并不像桌面浏览器一样存在“page”这个概念，这意味着用户不能够将一个页面向上，向下，向左，向右滚动。它采用的是另外一种方式，通过手势移动，像移动摄像机一样将可见视图（摄像机的镜头）移动到用户想看到的内容上。
 
+你的页面的可见区域不只受限于屏幕大小，你还必须处理地址栏和导航栏，它们分别位于屏幕的顶部和底部。但是地址栏会随着用户的拖动而动，点击顶部的状态栏可以让地址栏显示。在这一点上，ipad就略有不同，由于ipad屏幕更宽，因此地址栏和导航栏被组合成了一块并置于顶部，此栏也不会随着用户的拖动而消失。
 
+下表列出了你可能将使用的尺寸。记住他们。每次当你为苹果设备设计一个web app的时候你都需要将他们作为参考。
+>Table 4-1
+<table>
+	<tr>
+		<th>设备</th>
+		<th>竖屏模式</th>
+		<th>横屏模式</th>
+	</tr>
+	<tr>
+		<td>iPhone,iPod touch</td>
+		<td>
+			<dl>
+				<dt>320x460</dt>
+				<dd>减去高44px的导航栏</dd>
+				<dd>减去高60px的地址栏</dd>
+				<dd>减去高50px的调试控制台</dd>
+			</dl>
+		</td>
+		<td>
+			<dl>
+				<dt>480x300</dt>
+				<dd>减去高32px的导航栏</dd>
+				<dd>减去高60px的地址栏</dd>
+				<dd>减去高50px的调试控制台</dd>
+			</dl>
+		</td>
+	</tr>
+	<tr>
+		<td>iPad</td>
+		<td>
+			<dl>
+				<dt>768x1004</dt>
+				<dd>减去高58px的导航栏</dd>
+				<dd>减去高50px的调试控制台</dd>
+			</dl>
+		</td>
+		<td>
+			<dl>
+				<dt>1024x748</dt>
+				<dd>减去高58px的导航栏</dd>
+				<dd>减去高50px的调试控制台</dd>
+			</dl>
+		</td>
+	</tr>
+</table>
 
+这些指标都不是绝对限制，因为上述三种设备都允许web apps以全屏方式运行。在这种情况下，只有状态栏是可见的，而你的应用程序则会在屏幕的剩余部分自由展示。
 
+###关于“Web App”的思考
+上面所提到的浏览模型显然是与web app体验的原则相悖的。一个web app的目标在于无缝的提供一项服务。对于端用户而言，必须手动的缩放页面才能访问到一个菜单或者看清特定内容是不合理的，这样一来你的web app的用户忠实度也会大大降低。因此你必须完全拥有对你的应用程序的空间掌控权，隐藏浏览器导航，让用户可以使用你自己的应用程序所提供的内部导航。
 
+在提高你的web app用户体验方面，ajax可以给予很大的帮助。在下面的章节中我们将要介绍两种方式使得页面不需要刷新就可以跳转到特定的页面：第一种是利用javascript方法（window.location.hash），而另一种则是最新的css3方法（利用:target伪选择器）。
 
+###配置Viewpoint
 
+在ios上，viewpoint的概念不是指浏览器的客户端展示的部分，更不是屏幕的尺寸。它是一块逻辑上的区域，代表一个web页面的哪部分可以展示，它可能大于或者小于设备屏幕。当载入一个页面时，这个页面的所有内容尺寸会自动调整并以最佳方式适应到viewpoint中，并保持纵横比不变。viewpoint的默认宽度是980px（这个宽度在当今web站点中比例最高）。但是对一个web app而言，你并不希望你的页面被缩放：用户应该能够通过最少的操作直接访问到他们想访问的内容，因此让他们一开始就必须要缩放页面才能达到目的是不应该的。为此，你必须好好构建自己的页面，来避免这种情况。
 
+在页面的头部你可以通过设置viewpoint meta来定义viewpoint选项。下面这行代码可以满足你大部分情况的需求：
+
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	
+这行代码强制让viewpoint的宽度与设备的宽度保持1:1，并且viewpoint最大的宽度比例是1.0，且不允许用户点击屏幕放大浏览。根据上面所提到的，默认情况下，mobile会像PC上的浏览器一样渲染页面（默认的页面宽度是980px，这个值是可以通过viewport的width属性设置的），然后同比缩放以适应mobile的小屏幕（缩放比例可以通过minimum-scale和maxmum-scale进行设定）。
+
+viewport有几个属性：width设置viewport的宽度，即mobile最初模拟PC浏览器的宽度，之后mobile会这个宽度展现的页面同比缩放到mobile屏幕上。设置width=device-width后就不会再进行缩放了，因为宽度正好和mobile的宽度相同（前提是没有设置缩放比例）。 minimum-scale和maximum-scale是控制用户允许设置的缩放比例的。user-scalable标识是否允许对页面进行缩放，取值有两个yes和no。设置为no则不允许进行页面缩放了。initial-scale设置 用户最初看到页面时的缩放比例。具体请参加下表：
+
+<table>
+	<tr>
+		<th>属性</th>
+		<th>描述</th>
+	</tr>
+	<tr>
+		<td>width</td>
+		<td>viewpoint的宽度（单位：像素）。默认值为980，范围在200到10,000之间。这个属性的值可以不是数值，而使用常量device-width或device-height。</td>
+	</tr>
+	<tr>
+		<td>height</td>
+		<td>viewpoint的高度（单位：像素）。默认值是基于width的值和长宽比计算得出的。范围在223到10,000之间。这个属性同样可以使用常量device-width或device-height。</td>
+	</tr>
+	<tr>
+		<td>initial-scale</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>minimum-scale</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>maximum-scale</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>user-scalable</td>
+		<td>决定了是否允许用户缩放页面。默认为“yes”。设为“yes”（或1）表示允许缩放，“no”（或0）表示禁止缩放。</td>
+	</tr>
+</table>
 
 
 
