@@ -78,26 +78,27 @@ Jekyll默认是将所有被包含的页面放到你的源目录的_includes目�
 
 **代码高亮**
 
-Jekyll has built in support for syntax highlighting of over 100 languages via Pygments. In order to take advantage of this you’ll need to have Pygments installed, and the pygmentize binary must be in your path. When you run Jekyll, make sure you run it with Pygments support
+Jekyll通过Pygments为超过100种语言提供了语法高亮支持。为了充分利用这一点，你必须安装Pygments，且pygmentize二进制必须存在在你的路径。当你运行Jekyll时，确保你是在Pygments的支持下运行的。
 
-To denote a code block that should be highlighted:
+为了表示一块应该被高亮的代码块:
 
 	{% highlight ruby %}
-	def foo
-	  puts 'foo'
-	end
+		def foo
+		  puts 'foo'
+		end
 	{% endhighlight %}
+	
 The argument to highlight is the language identifier. To find the appropriate identifier to use for your favorite language, look for the “short name” on the Lexers page.
 
 Line number
 
 There is a second argument to highlight called linenos that is optional. Including the linenos argument will force the highlighted code to include line numbers. For instance, the following code block would include line numbers next to each line:
 
-{% highlight ruby linenos %}
-def foo
-  puts 'foo'
-end
-{% endhighlight %}
+	{% highlight ruby linenos %}
+		def foo
+		  puts 'foo'
+		end
+	{% endhighlight %}
 In order for the highlighting to show up, you’ll need to include a highlighting stylesheet. For an example stylesheet you can look at syntax.css. These are the same styles as used by GitHub and you are free to use them for your own site. If you use linenos, you might want to include an additional CSS class definition for lineno in syntax.css to distinguish the line numbers from the highlighted code.
 
 Post Url
