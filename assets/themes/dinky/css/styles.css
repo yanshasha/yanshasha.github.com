@@ -8,6 +8,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	border: 0;
 	font: inherit;
 	vertical-align: baseline;
+	
 }
 
 /* Base text styles */
@@ -16,7 +17,7 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #333;
-	background-color: #fefefe;
+	background-color: #f0f0f0;
 	margin: 0;
 	line-height: 1.8em;
 	-webkit-font-smoothing: antialiased;
@@ -24,7 +25,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	color: #232323;
-	margin: 36px 0 10px;
+	padding: 36px 0 10px;
+	word-wrap: break-word;
+word-break: break-all;
 }
 
 p, ul, ol, table, dl {
@@ -287,32 +290,27 @@ header li > a:hover {
 	color: #D65901;
 }
 
-a.buttons {
-	-webkit-font-smoothing: antialiased;
-	background: url(../images/arrow-down.png) no-repeat;
-	font-weight: normal;
-	text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0;
-	padding: 2px 2px 2px 22px;
-	height: 30px;
-}
 
-a.github {
-	background: url(../images/octocat-small.png) no-repeat 1px;
-}
-
-a.buttons:hover {
-	color: #fff;
-	text-decoration: none;
-}
 
 /* Section - for main page content */
-
-.main-box {
-	height: 100%;
-	margin-left: 350px;
+.left-col{
+	float:left;
+	width:15%;
 }
-.main-inner {
-	margin: 2% 7% 2% 5%;
+.main-col {
+	height: 100%;
+	width:70%;
+	float:left;	
+}
+.main-inner{
+	background-color:#fefefe;
+	border:solid 1px #cdcdcd;
+	border-top:none;
+	padding:0 20px;
+}
+.right-col{
+	float:right;
+	width:15%;
 }
 
 /* Footer */
@@ -330,36 +328,21 @@ footer {
 		margin: 0;
 	}
 
-	header, section, footer {
+	.left-col{
+		width:100%;
 		float: none;
-		position: static;
-		width: auto;
+	}
+	.main-col{
+		width:80%;
+	}
+	.right-col{
+		width:20%;
 	}
 
-	footer {
-		border-top: 1px solid #ccc;
-		margin: 0 84px 0 50px;
-		padding: 0;
-	}
+	
+	
 
-	header {
-		padding-right: 320px;
-	}
-
-	section {
-		padding: 20px 84px 20px 50px;
-		margin: 0 0 20px;
-	}
-
-	header a small {
-		display: inline;
-	}
-
-	header ul {
-		position: absolute;
-		right: 130px;
-		top: 84px;
-	}
+	
 }
 
 @media print, screen and (max-width: 720px) {
