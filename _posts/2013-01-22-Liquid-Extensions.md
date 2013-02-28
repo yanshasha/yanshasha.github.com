@@ -2,7 +2,7 @@
 layout: post
 title: "Liquid Extensions"
 description: ""
-category: 
+category: jekyll
 tags: []
 ---
 {% include JB/setup %}

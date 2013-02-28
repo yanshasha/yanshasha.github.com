@@ -32,17 +32,19 @@ p, ul, ol, table, dl {
 }
 
 h1, h2, h3 {
-	font-family: 'Arvo', Monaco, serif;
 	line-height: 1.3;
 	font-weight: normal;
 }
 
 h1, h2, h3 {
 	display: block;
-	font-weight:bold;
+	font-weight: bold;
 	padding-bottom: 5px;
 }
-h1{
+em {
+	font-style: normal;
+}
+h1 {
 	border-bottom: 1px dashed #ccc;
 }
 
@@ -56,7 +58,6 @@ h2 {
 
 h3 {
 	font-size: 18px;
-	
 }
 
 h4, h5, h6 {
@@ -76,10 +77,6 @@ a:hover {
 
 a small {
 	font-size: 12px;
-}
-
-em {
-	font-style: italic;
 }
 
 strong {
@@ -130,7 +127,7 @@ hr {
 /* Images */
 
 img {
-	max-width:100%;
+	max-width: 100%;
 }
 
 /* Code blocks */
@@ -139,41 +136,56 @@ code, pre {
 	font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 	font-size: 14px;
 }
+pre > code {
+	white-space: normal;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: transparent;
+}
+code {
+	margin: 0 2px;
+	padding: 3px 5px;
+	border: 1px solid #eaeaea;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	white-space: nowrap;
+}
 
 pre {
-	padding: 4px 12px;
-	background: #FDFEFB;
-	border-radius: 4px;
-	border: 1px solid #D7D8C8;
+	background-color: #f8f8f8;
+	border: 1px solid #ccc;
+	font-size: 13px;
+	line-height: 19px;
+	overflow: auto;
+	padding: 6px 10px;
+	border-radius: 3px;
 	overflow: auto;
 	overflow-y: hidden;
-	margin-bottom: 32px;
+	margin-bottom: 22px;
 }
 
 /* Tables */
 
 table {
 	width: 100%;
+	border-collapse: collapse;
 }
-
-table {
-	border: 1px solid #ccc;
-	margin-bottom: 32px;
-	text-align: left;
+/* Zebra striping */
+tr:nth-of-type(odd) {
+	background-color: #F9F9F9;
 }
-
+tr:hover {
+	background-color: #f3f3f3;
+}
 th {
-	font-family: 'Arvo', Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	font-weight: normal;
-	padding: 10px;
-	background: #232323;
-	color: #FDFEFB;
+	background-color: #e8e8e8;
+	/*	color: white;*/
+	font-weight: bold;
 }
-
-td {
-	padding: 10px;
-	background: #ccc;
+td, th {
+	padding: 6px;
+	border: 1px solid #ccc;
 }
 
 /* Wrapper */
@@ -185,53 +197,53 @@ td {
 
 .side-box {
 	width: 240px;
-	padding-top:25px;
+	padding-top: 25px;
 	position: fixed;
-	left:40px;
-	top:0;
+	left: 40px;
+	top: 0;
 	/*opacity: .4;*/
 	-webkit-transition: all .2s ease-in;
-	padding-bottom:60px;
+	padding-bottom: 60px;
 	-webkit-font-smoothing: antialiased;
-	background-color:#F0F0F0;
+	background-color: #F0F0F0;
 }
 
 .side-box:hover {
 	opacity: 1;
 }
 
-.avator-box{
+.avator-box {
 	width: 170px;
-	position:relative;
-	margin:0 auto;
+	position: relative;
+	margin: 0 auto;
 	padding: 5px;
 	border: 1px solid #ccc;
 }
 .avator-mask {
-	position:absolute;
+	position: absolute;
 	width: 170px;
 	height: 130px;
-	top:0;
-	left:0;
+	top: 0;
+	left: 0;
 	border-radius: 50%;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
-/*	background: -webkit-gradient(radial, center, center, from(rgba(255,0,0,1)), to(rgba(0,255,0,.25)));
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1e5799), color-stop(100%,#7db9e8)); 
-background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%,#7db9e8 100%);*/
-/* For WebKit */
- background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,0,0,.1)), to(rgba(0,0,255,.25)));
-/* For Mozilla */
- background: -moz-linear-gradient(top, rgba(255,0,0,1), rgba(0,0,255,.25));
-/* For lt IE8 */
- filter: progid:DXImageTransform.Microsoft.gradient(gradientyype=0,
-startColorstr='#88ff0000', endColorstr='#3300ff00');
-/* For gt IE8 */
- -moz-filter: progid:DXImageTransform.Microsoft.gradient(gradientyype=0,
-startColorstr='#88ff0000', endColorstr='#3300ff00');
+	/*	background: -webkit-gradient(radial, center, center, from(rgba(255,0,0,1)), to(rgba(0,255,0,.25)));
+	 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#1e5799), color-stop(100%,#7db9e8));
+	 background: -webkit-radial-gradient(center, ellipse cover, #1e5799 0%,#7db9e8 100%);*/
+	/* For WebKit */
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,0,0,.1)), to(rgba(0,0,255,.25)));
+	/* For Mozilla */
+	background: -moz-linear-gradient(top, rgba(255,0,0,1), rgba(0,0,255,.25));
+	/* For lt IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientyype=0,
+	startColorstr='#88ff0000', endColorstr='#3300ff00');
+	/* For gt IE8 */
+	-moz-filter: progid:DXImageTransform.Microsoft.gradient(gradientyype=0,
+	startColorstr='#88ff0000', endColorstr='#3300ff00');
 }
-.avator {	
-	display:block;
+.avator {
+	display: block;
 	/*width: 170px;*/
 }
 
@@ -247,8 +259,6 @@ h1.header {
 	border-bottom: none;
 	margin-top: 0;
 }
-
-
 
 a.header {
 	text-decoration: underline;
@@ -299,7 +309,7 @@ a.buttons:hover {
 
 .main-box {
 	height: 100%;
-	margin-left:350px;
+	margin-left: 350px;
 }
 .main-inner {
 	margin: 2% 7% 2% 5%;

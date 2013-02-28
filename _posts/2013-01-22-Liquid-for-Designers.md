@@ -2,7 +2,7 @@
 layout: post
 title: "Liquid for Designers"
 description: ""
-category: 
+category: jekyll
 tags: []
 ---
 {% include JB/setup %}
@@ -78,7 +78,7 @@ tags: []
 * `plus` - 加，如 {{ '1' | plus:'1' }} #=> '11', {{ 1 | plus:1 }} #=> 2
 * `times` - 乘，如 {{ 5 | times:4 }} #=> 20
 * `divided_by` - 除，如 {{ 10 | divided_by:2 }} #=> 5
-* `split` - 将一串字符串根据匹配模式分割成数组，如 {{ "a~b" | split:~ }} #=> ['a','b']
+* `split` - 将一串字符串根据匹配模式分割成数组，如 {{ "a~b" | split:~ }} #=> \['a','b'\]
 * `modulo` - 余数，如 {{ 3 | modulo:2 }} #=> 1
 {% endraw %}
 
@@ -87,32 +87,29 @@ tags: []
 
 下列是当前已经支持的标签：
 
-* **assign** - Assigns some value to a variable
-* **capture** - Block tag that captures text into a variable
-* **case** - Block tag, its the standard case...when block
-* **comment** - Block tag, comments out the text in the block
-* **cycle** - Cycle is usually used within a loop to alternate between values, like colors or DOM classes.
-* **for** - For loop
-* **if** - Standard if/else block
-* **include** - Includes another template; useful for partials
-* **raw** - temporarily disable tag processing to avoid syntax conflicts.
-* **unless** - Mirror of if statement
+* **assign** - 将一些值赋给一个变量
+* **capture** - 块标记，把一些文本捕捉到一个变量中
+* **case** - 块标记，标准的case语句
+* **comment** - 块标记，将一块文本作为注释
+* **cycle** - Cycle通常用于循环轮换值，如颜色或DOM类。 
+* **for** - 用于循环For loop
+* **if** - 标准的 if/else 块
+* **include** - 包含其他的模板；对于区块化非常有效
+* **raw** - 暂时性的禁用的标签的解析
+* **unless** - if语句的简版
 
 ###注释
 
-注释是最简单的标签Comment is the simplest tag. It just swallows content.
-
+注释是最简单的标签，它只是把内容包含起来。
+{% raw %}
 We made 1 million dollars {% comment %} in losses {% endcomment %} this year
-
+{% endraw %}
 ###Raw
 
 Raw暂时性的禁用的标签的解析。这在需要展示一些可能产生冲突的内容（如本页面，要展示liquid语句，就需要包含在raw标签间，否则会被解析）时非常有用。 
 
-{% raw %}
-	{% raw %}
-	  In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
-	{% endraw %}
-{% endraw %}
+
+	{{ "{% raw "}}%}{% raw %}In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.{% endraw %} {{ "{% endraw "}}%}
 
 ###If / Else
 
@@ -245,7 +242,7 @@ Example:
 
 ###循环
 
-Liquid允许循环一个集合 allows for loops over collections:
+Liquid允许循环一个集合 :
 
 {% raw %}
 	{% for item in array %}
@@ -253,7 +250,7 @@ Liquid允许循环一个集合 allows for loops over collections:
 	{% endfor %}
 {% endraw %}
 	
-During every for loop, the following helper variables are available for extra styling needs:
+在每次循环期间，下列的帮助变量都可用于额外的展示需要:
 
 	forloop.length      # => length of the entire for loop
 	forloop.index       # => index of the current iteration
@@ -263,40 +260,46 @@ During every for loop, the following helper variables are available for extra st
 	forloop.first       # => is this the first iteration?
 	forloop.last        # => is this the last iteration?
 	
-There are several attributes you can use to influence which items you receive in your loop
+你可以使用一些属性来影响接受循环中的哪项。
 
-limit:int lets you restrict how many items you get. offset:int lets you start the collection with the nth item.
-
-	# array = [1,2,3,4,5,6]
+`limit:int` 使你可以限制接受的循环项个数;     `offset:int` 可以可以让你从循环集合的第n项开始.
+{% raw %}
+	# array = \[1,2,3,4,5,6\]
 	{% for item in array limit:2 offset:2 %}
 	  {{ item }}
 	{% endfor %}
 	# results in 3,4
+{% endraw %}
 	
-Reversing the loop
-
+反转循环
+{% raw %}
 	{% for item in collection reversed %} {{item}} {% endfor %}
+{% endraw %}
 
-Instead of looping over an existing collection, you can define a range of numbers to loop through. The range can be defined by both literal and variable numbers:
-
+除了对一个已经存在的集合进行循环，你还可以定义一段范围区域内的数字进行循环。这段区域既可以通过文字也可以通过变量数定义得到:
+{% raw %}
 	# if item.quantity is 4...
 	{% for i in (1..item.quantity) %}
 	  {{ i }}
 	{% endfor %}
 	# results in 1,2,3,4
+{% endraw %}
 	
 ###Variable Assignment
 
-You can store data in your own variables, to be used in output or other tags as desired. The simplest way to create a variable is with the assign tag, which has a pretty straightforward syntax:
-
+你可以把数据存储在你自己定义的变量中，以便在输出或者其他标签中使用。创建一个变量的最简单方式是使用assign标签，其语法也是简单明了的：
+{% raw %}	
 	{% assign name = 'freestyle' %}
 	
-	{% for t in collections.tags %}{% if t == name %}
-	  <p>Freestyle!</p>
-	{% endif %}{% endfor %}
-	
-Another way of doing this would be to assign true / false values to the variable:
+	{% for t in collections.tags %}
+		{% if t == name %}
+		  <p>Freestyle!</p>
+		{% endif %}
+	{% endfor %}
+{% endraw %}	
 
+另一种常见用法是把true / false值赋给变量:
+{% raw %}
 	{% assign freestyle = false %}
 	
 	{% for t in collections.tags %}{% if t == 'freestyle' %}
@@ -306,18 +309,20 @@ Another way of doing this would be to assign true / false values to the variable
 	{% if freestyle %}
 	  <p>Freestyle!</p>
 	{% endif %}
+{% endraw %}
 	
-If you want to combine a number of strings into a single string and save it to a variable, you can do that with the capture tag. This tag is a block which "captures" whatever is rendered inside it, then assigns the captured value to the given variable instead of rendering it to the screen.
+如果你希望把一系列字符串连接为一个字符串，并将其存储到变量中，你可以使用capture标签。这个标签是一个块级标签，它会"captures"任何在其中渲染的元素，并把捕获的值赋给给定的变量，而不是把这些值渲染在页面中。
 
+{% raw %}
 	{% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
 	
 	<label for="{{ attribute_name }}">Color:</label>
-	<select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
+	<select name="attributes\[{{ attribute_name }}\]" id="{{ attribute_name }}">
 	  <option value="red">Red</option>
 	  <option value="green">Green</option>
 	  <option value="blue">Blue</option>
 	</select>
-
+{% endraw %}
 
 
 参考：
