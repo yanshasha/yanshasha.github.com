@@ -16,7 +16,7 @@ body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	color: #333;
-	background-color: #fefefe;
+	background-color: #f4f4f4;
 	margin: 0;
 	line-height: 1.8em;
 	-webkit-font-smoothing: antialiased;
@@ -26,10 +26,6 @@ h1, h2, h3, h4, h5, h6 {
 	color: #232323;
 	word-wrap: break-word;
 	word-break: break-all;
-}
-
-p, ul, ol, table, dl {
-	margin: 0 0 22px;
 }
 
 h1, h2, h3 {
@@ -62,11 +58,9 @@ h3 {
 }
 
 a {
-	color: #C30000;
-	font-weight: 200;
+	color: #F16C32;
 	text-decoration: none;
 }
-
 
 
 a small {
@@ -77,14 +71,8 @@ strong {
 	font-weight: 700;
 }
 
-ul li {
+ul, ol {
 	list-style: none;
-	padding-left: 25px;
-}
-
-ol li {
-	list-style: none;
-	padding-left: 20px;
 }
 
 blockquote {
@@ -183,24 +171,19 @@ td, th {
 }
 
 /*公共元素样式：begin*/
-.tag{
-	background-color:rgb(241,108,50);
-	opacity:0.7;
-	color:#fff;
-	padding:2px 5px;
-	margin-right:4px;
-	border-radius:4px;
+.tag {
+	background-color: rgb(241,108,50);
+	opacity: 0.7;
+	color: #fff;
+	padding: 2px 5px;
+	margin-right: 4px;
+	border-radius: 4px;
 }
-.tag:hover{
-	opacity:1;
+.tag:hover {
+	opacity: 1;
 }
 
 /*公共元素样式：end*/
-
-/* Wrapper */
-.wrapper {
-
-}
 
 /* Header */
 
@@ -260,29 +243,43 @@ td, th {
 	width: 100%;
 	height: 20px;
 	overflow: hidden;
+	/*position:fixed;
+	 top:0;*/
+	background: url(../images/sunflower.jpg);
 }
 
-/* Section - for main page content */
-.left-col, .right-col {
-	position: fixed;
-	width: 15%;
-	top: 20px;
-	bottom: 0;
-	background-color: #f0f0f0;
+/* Wrapper */
+.wrapper {
+	padding-top: 20px;
 }
+/* Section - for main page content */
+
 .left-col {
-	left: 0;
-	border-right: solid 1px #cdcdcd;
+	width: 14%;
+	float: left;
 }
 .main-col {
-	margin: 0 15%;
+	float: left;
+	width: 86%;
+	margin-right: -250px;
 }
 .main-inner {
-	padding: 0 20px;
+	margin-right: 250px;
+	background-color: #fefefe;
+	/*	position:relative;
+	 top:20px;*/
+	-webkit-border-radius: 0 10px 0 0;
+	border-radius: 0 10px 0 0;
+	border: 1px solid rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+	-moz-box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+	box-shadow: 0 0 10px 1px rgba(0,0,0,.05);
+	padding:25px 20px;
 }
 .right-col {
-	right: 0;
-	border-left: solid 1px #cdcdcd;
+	float: right;
+	width: 220px;
+	padding-left: 20px;
 }
 
 /* Footer */
@@ -292,11 +289,37 @@ footer {
 	position: fixed;
 	bottom: 10px;
 }
+/*左栏导航：begin*/
+.logo {
+	background-color: #fff;
+	border-top: 1px solid rgba(0,0,0,.1);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-right: 1px solid #fff;
+	-webkit-box-shadow: -15px 0 10px 0 rgba(0,0,0,.05);
+	-moz-box-shadow: -15px 0 10px 0 rgba(0,0,0,.05);
+	box-shadow: -15px 0 10px 0 rgba(0,0,0,.05);
+	margin-right: -1px;
+	position: relative;
+	z-index: 2;
+	padding: 15px 0;
+	text-align: center;
+}
+.logo a {
+	color: RGB(241,108,50);
+	font-weight: bold;
+	font-family: microsoft yahei;
+}
+.top-nav li>a{
+	display:block;
+	padding:10px 0 10px 25px;
+	font-size:1.2em;
+	color:rgba(0,0,0,.6);
+}
+/*左栏导航：end*/
 
 /*文章列表:begin*/
 .article-list > li {
-	margin:2.8em 0 0 0 ;
-	padding: 0 0 1em 20%;
+	padding: 2.8em 0 1em 20%;
 	border-bottom: 1px solid rgba(78, 68, 60, 0.1);
 }
 .article-list header a {
@@ -317,6 +340,66 @@ footer {
 
 /*文章列表:end*/
 
+/*右栏：begin*/
+.right-col h2 {
+	font-size: 16px;
+	color: rgba(0,0,0,.7);
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	margin:10px 0 8px 0;
+	padding-bottom:5px;
+	padding-left:6px;
+	position:relative;
+	left:-10px;
+}
+.categories-list a {
+	color: rgba(0,0,0,.5);
+	transition: color .2s;
+	-moz-transition: color .2s;
+	-ms-transition: color .2s;
+	-o-transition: color .2s;
+	-webkit-transition: color .2s;
+	display:block;
+	padding:5px 0 ;
+	
+}
+.categories-list a:hover {
+	color: rgba(0,0,0,1);
+}
+.categories-list a > span {
+	color: #aaa;
+	margin-left: 3px;
+}
+
+/*右栏：end*/
+@media print, screen and (max-width: 1024px) {
+	.wrapper {
+		padding-top: 0;
+		padding-left: 20px;
+	}
+	.left-col {
+		width: 100%;
+	}
+	.main-col {
+		width: 100%;
+	}
+	.top-nav, .top-nav li, .logo {
+		float: left;
+	}
+	.top-nav li>a{
+		padding:15px 20px;
+	}
+	.logo {
+		border: none;
+		border-right: 1px solid rgba(0,0,0,.1);
+		border-left: 1px solid rgba(0,0,0,.1);
+		margin: 0 0 -1px 0;
+		padding: 10px 15px;
+		-webkit-box-shadow: 0 -15px 10px 1px rgba(0,0,0,.025);
+		-moz-box-shadow: 0 -15px 10px 1px rgba(0,0,0,.025);
+		box-shadow: 0 -15px 10px 1px rgba(0,0,0,.025);
+	}
+
+}
 @media print, screen and (max-width: 960px) {
 
 	div.wrapper {
@@ -358,6 +441,14 @@ footer {
 
 	header ul, header p.view {
 		position: static;
+	}
+	.article-list > li {
+		padding-left: 2.8em;
+	}
+	.article-list aside {
+		float: none;
+		width: auto;
+		margin: 0 0 1.6em 0;
 	}
 }
 
