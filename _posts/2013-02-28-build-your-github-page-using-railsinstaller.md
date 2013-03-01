@@ -3,7 +3,7 @@ layout: post
 title: "windows7下利用railsinstaller轻松构造github站点"
 description: ""
 category: support
-tags: [github]
+tags: [github,raisinstaller,lessons]
 ---
 {% include JB/setup %}
 

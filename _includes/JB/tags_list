@@ -15,6 +15,8 @@ Usage:
     site.tags is a Hash while page.tags is an array.
     
   This helper can be seen in use at: ../_layouts/default.html
+  
+  <li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
 -->{% endcomment %}
 
 {% if site.JB.tags_list.provider == "custom" %}
@@ -22,7 +24,7 @@ Usage:
 {% else %}
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %} 
-    	<li><a href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+    	<a class="tag" href="{{ BASE_PATH }}{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} </a>
     {% endfor %}
   {% else %}
     {% for tag in tags_list %} 
