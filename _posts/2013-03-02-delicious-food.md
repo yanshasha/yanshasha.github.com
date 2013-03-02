@@ -2,8 +2,8 @@
 layout: post
 title: "我是吃货：不可不备的零食攻略"
 description: ""
-category: food
-tags: [零食,休闲,生活]
+category: life
+tags: [零食]
 ---
 {% include JB/setup %}
 

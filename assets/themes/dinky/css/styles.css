@@ -304,6 +304,7 @@ footer {
 	z-index: 2;
 	padding: 15px 0;
 	text-align: center;
+	font-size:13px;
 }
 .logo a {
 	color: RGB(241,108,50);
@@ -338,7 +339,9 @@ footer {
 .article-content {
 	margin: 0 40px 1.6em 0;
 }
-
+#disqus_thread{
+	margin-top:25px;
+}
 /*文章列表:end*/
 
 /*右栏：begin*/
