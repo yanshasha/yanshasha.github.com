@@ -289,6 +289,9 @@ td, th {
 	text-align: center;
 	clear:both;
 }
+.footer img{
+	display:none;
+}
 /*左栏导航：begin*/
 .logo {
 	background-color: #fff;
