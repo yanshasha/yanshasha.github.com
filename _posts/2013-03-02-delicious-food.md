@@ -32,3 +32,8 @@ tags: [零食]
 8. <a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB07S4%2FK0CFcRfH0GoT805sipKjwigr0kCpLnlhmjHq9jYEqu67XEaTz8V89lau%2FjlE%2FN3S8EPCqiWxEozqgvrxZY9Di3LimwQ%3D%3D">淘金币 2份包邮零食品台式蜜汁小香肠腊肠酒曲250g独立小包装</a> 
 
 9. <a href="http://s.click.taobao.com/t?e=zGU34CA7K%2BPkqB07S4%2FK0CFcRfH0GoT805sipKjwigr0niPULtDS7qZhCOzkEgO3R9iDwxpl2lV17OkQpaxotjjpp28mr9ygtB1LPsmkxkY2hg%3D%3D">包邮 台湾特产进口零食品 张君雅小妹妹系列7口味11包 甜甜圈/面</a>
+
+
+	2013-3-4更新：
+	今天居然就收到货了~周六拍的周一到，速度比想象中快嘛~ 不过在激动的开纸箱的时候把手给划了~
+	总之，这家还不错，虽然品种比我梦想的还是少了一点，不过零食质量，发货速度都不错~ 继续发掘其他美食商家ing~
