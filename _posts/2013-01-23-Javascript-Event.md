@@ -2,7 +2,7 @@
 layout: post
 title: "Event"
 description: ""
-category: Javascript
+category: js
 tags: [Javascript]
 ---
 {% include JB/setup %}

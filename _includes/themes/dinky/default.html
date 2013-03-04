@@ -25,17 +25,19 @@
 				<!-- <div class="avator-box">
 				<img src="{{ ASSET_PATH }}/images/avator.jpg" alt="yanshasha" class="avator"/>
 				</div> -->
-				<div class="logo"><a href="{{ HOME_PATH }}">{{ site.title }}</a></div>
+				<div class="logo">
+					<a href="{{ HOME_PATH }}">{{ site.title }}</a>
+				</div>
 				<p class="header">
 					{{ site.tagline }}
 				</p>
-				
+
 				<ul class="top-nav">
 					{% assign pages_list = site.pages %}
 					{% assign group = 'navigation' %}
 					{% include JB/pages_list %}
 				</ul>
-				
+
 			</header>
 
 			<section class="main-col">
@@ -88,26 +90,18 @@
 							<a href="http://facebook.com/{{ site.author.facebook }}/" rel="me">facebook.com/{{ site.author.facebook }}</a>
 						</li>
 						{% endif %}
-						{% if site.author.flickr %}
-						<li class="flickr">
-							<a href="http://flickr.com/{{ site.author.flickr }}/" rel="me">flickr.com/{{ site.author.flickr }}</a>
-						</li>
-						{% endif %}
-						{% if site.author.yelp %}
-						<li class="yelp">
-							<a href="http://{{ site.author.yelp }}.yelp.com/" rel="me">{{ site.author.yelp }}.yelp.com</a>
-						</li>
-						{% endif %}
-						{% if site.author.pinterest %}
-						<li class="pinterest">
-							<a href="http://pinterest.com/{{ site.author.pinterest }}" rel="me">pinterest.com/{{ site.author.pinterest }}</a>
-						</li>
-						{% endif %}
+
 					</ul>
 				</div><!-- misc -->
 				{% endif %}
+				<script type="text/javascript">
+					alimama_pid = "mm_36636155_3483164_11368700";
+					alimama_width = 200;
+					alimama_height = 200;
+				</script>
+				<script src="http://a.alimama.cn/inf.js" type="text/javascript"></script>
 			</aside>
-			<footer>
+			<footer class="footer">
 				by yanshasha
 			</footer>
 		</div>

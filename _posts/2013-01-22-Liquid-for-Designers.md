@@ -2,8 +2,8 @@
 layout: post
 title: "Liquid for Designers"
 description: ""
-category: jekyll
-tags: []
+category: site
+tags: [jekyll]
 ---
 {% include JB/setup %}
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Configuring the Viewport"
 description: ""
-category: 
+category: mobile
 tags: []
 ---
 {% include JB/setup %}

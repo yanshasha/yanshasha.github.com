@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "new post"
+title: "移动web开发经验总结（一）"
 description: ""
-category: 
-tags: []
+category: mobile 
+tags: [mobile]
 ---
 {% include JB/setup %}
 

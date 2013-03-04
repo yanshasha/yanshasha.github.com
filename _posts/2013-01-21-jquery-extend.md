@@ -2,8 +2,8 @@
 layout: post
 title: "jQuery.extend"
 description: ""
-category: 
-tags: []
+category: js
+tags: [jquery]
 ---
 {% include JB/setup %}
 

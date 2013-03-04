@@ -2,8 +2,8 @@
 layout: post
 title: "Common Questions"
 description: ""
-category: 
-tags: []
+category: site
+tags: [问题总结,jekyll]
 ---
 {% include JB/setup %}
 

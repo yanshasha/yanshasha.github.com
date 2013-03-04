@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "The Anatomy of a Web Application"
+title: "剖析web应用程序"
 description: ""
-category: 
-tags: []
+category: mobile
+tags: [translate]
 ---
 {% include JB/setup %}
 
-##剖析web应用程序
+
 
 用手机浏览网页的功能已经出现了一段时间，但是用手机去访问普通web端的页面并不方便，页面元素缩小，原本的页面元素变得很难点，事件触发也不一样。
 后来出现了单独的wap页面，但是和原生app相比，不管从流畅度还是交互效果来说，都显得很没有竞争力。因此移动互联网虽然出现了很长一段时间，但一直还没有引起开发者足够的兴趣。

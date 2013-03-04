@@ -2,7 +2,7 @@
 layout: post
 title: "Template Data"
 description: ""
-category: jekyll
+category: site
 tags: [jekyll]
 ---
 {% include JB/setup %}

@@ -2,8 +2,8 @@
 layout: post
 title: "winphone bugs"
 description: ""
-category: bugs
-tags: [winphone]
+category: mobile
+tags: [winphone,bugs]
 ---
 {% include JB/setup %}
 

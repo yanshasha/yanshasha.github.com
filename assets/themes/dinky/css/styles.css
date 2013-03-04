@@ -285,10 +285,9 @@ td, th {
 
 /* Footer */
 
-footer {
+.footer {
 	text-align: center;
-	position: fixed;
-	bottom: 10px;
+	clear:both;
 }
 /*左栏导航：begin*/
 .logo {
@@ -331,13 +330,13 @@ footer {
 .article-list aside {
 	float: left;
 	width: 20%;
-	margin: 0 0 0 -25%;
+	margin: -2em 0 0 -25%;
 	font-size: .85em;
 	line-height: 2;
 	color: rgba(78, 68, 60, 0.7);
 }
 .article-content {
-	margin: 0 40px 1.6em 0;
+	
 }
 #disqus_thread{
 	margin-top:25px;
@@ -375,7 +374,7 @@ footer {
 }
 
 /*右栏：end*/
-@media print, screen and (max-width: 1024px) {
+@media print, screen and (max-width: 1024px)  {
 	.wrapper {
 		padding-top: 0;
 		padding-left: 20px;
@@ -390,7 +389,7 @@ footer {
 		float: left;
 	}
 	.top-nav li>a{
-		padding:15px 20px;
+		padding:10px 20px;
 	}
 	.logo {
 		border: none;
@@ -404,71 +403,28 @@ footer {
 	}
 
 }
-@media print, screen and (max-width: 960px) {
-
-	div.wrapper {
-		width: auto;
-		margin: 0;
+@media print, screen and (max-width: 960px){
+	.article-list aside{
+		float:none;
+		width:auto;
+		margin:10px;
 	}
-
-	.left-col {
-		width: 100%;
-		float: none;
+	.article-list > li{
+		padding:2.8em 0;
 	}
-	.main-col {
-		width: 80%;
+	.article-list aside li{
+		display:inline-block;
+		margin-right:10px;
 	}
-	.right-col {
-		width: 20%;
-	}
-
 }
 
 @media print, screen and (max-width: 720px) {
-	body {
-		word-wrap: break-word;
-	}
-
-	header {
-		padding: 10px 20px 0;
-		margin-right: 0;
-	}
-
-	section {
-		padding: 10px 0 10px 20px;
-		margin: 0 0 30px;
-	}
-
-	footer {
-		margin: 0 0 0 30px;
-	}
-
-	header ul, header p.view {
-		position: static;
-	}
-	.article-list > li {
-		padding-left: 2.8em;
-	}
-	.article-list aside {
-		float: none;
-		width: auto;
-		margin: 0 0 1.6em 0;
-	}
+	
 }
 
 @media print, screen and (max-width: 480px) {
 
-	header ul li.download {
-		display: none;
-	}
 
-	footer {
-		margin: 0 0 0 20px;
-	}
-
-	footer a {
-		display: block;
-	}
 
 }
 

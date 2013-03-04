@@ -2,7 +2,7 @@
 layout: post
 title: "YAML Front Matter"
 description: ""
-category: jekyll
+category: site
 tags: [jekyll]
 ---
 {% include JB/setup %}

@@ -2,8 +2,8 @@
 layout: post
 title: "监听表单输入事件支持表"
 description: ""
-category: support
-tags: [form,input]
+category: mobile
+tags: [winphone,android,iphone]
 ---
 {% include JB/setup %}
 

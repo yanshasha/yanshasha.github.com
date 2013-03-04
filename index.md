@@ -13,7 +13,7 @@ tagline: Supporting tagline
 		</header>
 		<aside>
 			<ul>
-				<li>{{post.date | date:"%y-%m-%d" }}</li>
+				<li>{{post.date | date:"20%y年%m月%d日" }}</li>
 				<li>{{post.categories }}</li>
 				<li>
 					{% assign tags_list = post.tags %}  
