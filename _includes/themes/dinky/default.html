@@ -51,19 +51,7 @@
 					{% assign categories_list = site.categories %}
 					{% include JB/categories_list %}
 				</ul>
-				{% if site.ads.google %}
-				<div class="misc ad">
-					<script type="text/javascript">
-						<!--
-						google_ad_client ="{{ site.ads.google.client }}";
-						google_ad_slot = "{{ site.ads.google.slot }}";
-						google_ad_width = {{ site.ads.google.width }};
-						google_ad_height = {{ site.ads.google.height }};
-						//-->
-					</script>
-					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-				</div>
-				{% endif %}
+				
 				<h2>Contact</h2>
 				{% if site.author %}
 				<div class="misc vcard">
@@ -103,6 +91,24 @@
 			</aside>
 			<footer class="footer">
 				by yanshasha
+				<script type="text/javascript">
+					var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+					document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff34c02f57212f71dfbcc2f8fb9337509' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+
+				{% if site.ads.google %}
+				<div class="misc ad">
+					<script type="text/javascript">
+						<!--
+						google_ad_client ="{{ site.ads.google.client }}";
+						google_ad_slot = "{{ site.ads.google.slot }}";
+						google_ad_width = {{ site.ads.google.width }};
+						google_ad_height = {{ site.ads.google.height }};
+						//-->
+					</script>
+					<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+				</div>
+				{% endif %}
 			</footer>
 		</div>
 		<!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
