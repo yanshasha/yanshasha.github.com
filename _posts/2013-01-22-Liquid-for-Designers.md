@@ -43,10 +43,12 @@ tags: [jekyll]
 
 输出结果是：
 
+{% raw %}
 	Hello {{ 'tobi' | upcase }}
 	Hello tobi has {{ 'tobi' | size }} letters!
 	Hello {{ '*tobi*' | textilize | upcase }}
 	Hello {{ 'now' | date: "%Y %h" }}
+{% endraw %}
 
 ###标准过滤器
 
