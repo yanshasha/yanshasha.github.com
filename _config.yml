@@ -4,7 +4,8 @@ permalink: /:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
-markdown:  rdiscount
+#markdown:  rdiscount
+markdown: redcarpet
 pygments: true
 paginate: 5
 # Themes are encouraged to use these universal variables 
