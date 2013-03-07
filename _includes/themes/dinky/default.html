@@ -7,8 +7,14 @@
 		<title>{{ page.title }}</title>
 
 		<link rel="stylesheet" href="{{ ASSET_PATH }}/css/styles.css">
-		<link rel="stylesheet" href="{{ ASSET_PATH }}/css/pygment_trac.css">
+		<!-- <link rel="stylesheet" href="{{ ASSET_PATH }}/css/prettify.css"> -->
+		<link rel="stylesheet" href="{{ ASSET_PATH }}/css/sons-of-obsidian.css">
+		
+
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/prettify.js"></script>
+		<script type="text/javascript" src="{{ ASSET_PATH }}/js/lang-yaml.js"></script>
 		<script src="{{ ASSET_PATH }}/js/scale.fix.js"></script>
+		<script src="{{ ASSET_PATH }}/js/jquery.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 		<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -51,7 +57,7 @@
 					{% assign categories_list = site.categories %}
 					{% include JB/categories_list %}
 				</ul>
-				
+
 				<h2>Contact</h2>
 				{% if site.author %}
 				<div class="misc vcard">
@@ -112,5 +118,12 @@
 			</footer>
 		</div>
 		<!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('pre').addClass('prettyprint');
+				prettyPrint();
+			});
+		</script>
+
 	</body>
 </html>

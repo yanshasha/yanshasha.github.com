@@ -10,10 +10,12 @@ tags: [jekyll]
 
 任何带有YAML front matter块的文件都会被Jekyll作为特殊文件解析。YAML front matter必须位于文件的最前面，且格式如下：
 
-	---
-	layout: post
-	title: Blogging Like a Hacker
-	---
+<pre class="prettyprint lang-yaml">
+<code>---
+layout: post
+title: Blogging Like a Hacker
+---</code>
+</pre>
 
 在这三虚线之间，你可以设置预定义的变量（见下面的参考）或自定义你自己的数据。	
 

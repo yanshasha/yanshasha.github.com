@@ -41,11 +41,11 @@ pygments:	true
 markdown: redcloth
 Step3
 在 post 博文中内嵌高亮的代码段：
-{% highlight python linenos %}
+{% raw %}
 def foo
   puts 'foo'
 end
-{% endhighlight %}
+{% endraw %}
 highlight 后面第一个参数为 language，如 python，也可以是 ruby 控制台 irb，更多 lanuages 可以查询 这里～
 第二个参数显示行号
 注意
@@ -53,6 +53,8 @@ highlight 后面第一个参数为 language，如 python，也可以是 ruby 控
 2. 高亮代码段上下都必须留出一行空白，否则会导致乱码
 3. 有的代码会很长，建议使用左右滚轮，在主题 css 中添加 .highlight{ overflow: auto; } 即可
 
+>后记：惭愧的说，虽然我折腾了很久，按照这个教程想要安装pygments，但是一直报错，说`cannot load such file`之类的。而且即使我在config.yml中把pygments的选项设为false，在gems库里把对应的pygments都删掉还是报错。直到我在C:\Ruby200\lib\ruby\gems\2.0.0\gems\jekyll-0.12.1\lib\jekyll.rb中的第27行把`require 'pygments'`注释掉，才OK。
+不知道是我个人这边的原因还是windows的普遍原因，总之我是放弃了安装pygments，改为引入Javascript code prettifier来高亮代码。
 
 
 
