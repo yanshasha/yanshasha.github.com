@@ -1,12 +1,12 @@
 ---
 layout: page
-title: 标签页面
+title: 文章标签
 header: Posts By Tag
 group: navigation
 ---
 {% include JB/setup %}
-
-<ul class="tag_box inline">
+<h2>文章标签</h2>
+<ul class="tag-box">
   {% assign tags_list = site.tags %}  
   {% include JB/tags_list %}
 </ul>

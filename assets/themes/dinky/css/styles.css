@@ -172,7 +172,10 @@ td, th {
 }
 
 /*公共元素样式：begin*/
-.tag-list {
+.tag-box>li{
+	display:inline-block;
+}
+.tag-box a {
 	background-color: rgb(241,108,50);
 	opacity: 0.7;
 	color: #fff;
@@ -180,7 +183,7 @@ td, th {
 	margin-right: 4px;
 	border-radius: 4px;
 }
-.tag-list:hover {
+.tag-box a:hover {
 	opacity: 1;
 }
 
@@ -256,12 +259,12 @@ td, th {
 /* Section - for main page content */
 
 .left-col {
-	width: 14%;
+	width: 12%;
 	float: left;
 }
 .main-col {
 	float: left;
-	width: 86%;
+	width: 88%;
 	margin-right: -250px;
 }
 .main-inner {
@@ -321,6 +324,40 @@ td, th {
 	padding:10px 0 10px 25px;
 	font-size:1.2em;
 	color:rgba(0,0,0,.6);
+}
+.top-nav {
+	border-top: 1px solid rgba(0, 0, 0, .12);
+}
+.top-nav > li {
+	/*border-bottom: 1px dashed #ddd;*/
+	border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.top-nav > li > a {
+	display: block;
+	text-align: right;
+	vertical-align: middle;
+	cursor: pointer;
+	font-weight: bold;
+	background-color: rgba(255, 255, 102, 0);
+	opacity: 0.6;
+	font-size: 16px;
+	color:#000;
+	padding: 0 20px;
+	height: 60px;
+	line-height: 60px;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	-ms-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	
+}
+
+.top-nav > li > a.sel, .top-nav > li > a:hover {
+	opacity: 1;
+	background-color: #E85431;
+	color: #fff;
 }
 /*左栏导航：end*/
 

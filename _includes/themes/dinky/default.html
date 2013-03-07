@@ -38,7 +38,7 @@
 					{{ site.tagline }}
 				</p>
 
-				<ul class="top-nav">
+				<ul class="top-nav" id='topNav'>
 					{% assign pages_list = site.pages %}
 					{% assign group = 'navigation' %}
 					{% include JB/pages_list %}
@@ -122,6 +122,12 @@
 			$(document).ready(function() {
 				$('pre').addClass('prettyprint');
 				prettyPrint();
+				$('#topNav>li>a').on('click',function(){
+					$('#topNav>li>a').removeClass('sel');
+					$(this).addClass('sel');
+				});
+					
+				
 			});
 		</script>
 

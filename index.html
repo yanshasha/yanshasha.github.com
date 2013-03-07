@@ -15,7 +15,7 @@ tagline: Supporting tagline
 			<ul>
 				<li>{{post.date | date:"20%y年%m月%d日" }}</li>
 				<li>{{post.categories }}</li>
-				<li>
+				<li class="tag-box">
 					{% assign tags_list = post.tags %}  
   				    {% include JB/tags_list %}
   	  			</li>

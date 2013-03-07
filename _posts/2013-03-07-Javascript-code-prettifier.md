@@ -25,9 +25,9 @@ Let's have a try!
 
     非常简单，在页面里插入js代码：
     
-<?prettify?>
-code here
 
+	code here
+{: .prettyprint}
 
 		<script type="text/javascript">
 			$(document).ready(function() {
