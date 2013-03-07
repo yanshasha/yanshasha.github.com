@@ -34,9 +34,6 @@
 				<div class="logo">
 					<a href="{{ HOME_PATH }}">{{ site.title }}</a>
 				</div>
-				<p class="header">
-					{{ site.tagline }}
-				</p>
 
 				<ul class="top-nav" id='topNav'>
 					{% assign pages_list = site.pages %}
@@ -122,10 +119,10 @@
 			$(document).ready(function() {
 				$('pre').addClass('prettyprint');
 				prettyPrint();
-				$('#topNav>li>a').on('click',function(){
-					$('#topNav>li>a').removeClass('sel');
-					$(this).addClass('sel');
-				});
+				// $('#topNav>li>a').on('click',function(){
+					// $('#topNav>li>a').removeClass('sel');
+					// $(this).addClass('sel');
+				// });
 					
 				
 			});
