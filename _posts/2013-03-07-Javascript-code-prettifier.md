@@ -17,10 +17,10 @@ Let's have a try!
 1.    下载 [prettyprint对应的样式表和脚本文件](http://google-code-prettify.googlecode.com/files/prettify-small-5-Jul-2008.zip). 
 
 2.    下载后解压，将其中的css和js分别放到你的对应目录下。然后在你的文件中包含它们，注意调整在 script 和 link标签中的路径，我的是：
-		
+{% raw %}		
 		<link rel="stylesheet" href="{{ ASSET_PATH }}/css/prettify.css">
 		<script type="text/javascript" src="{{ ASSET_PATH }}/js/prettify.js"></script>
-	
+{% endraw %} 	
 3.    由于我是用markdown来写文章，而markdown只要用tab缩进文档就会自动生成`<pre><code>`标记。如果是在行内标记Code，也只需要用反引号(\`)包含相关文字就可以了。也就是说，我不需要在页面里写html标签，通过markdown渲染器就能自动生成html。而prettyprint的样式需要在`<pre>`或`<code>`中添加类名prettyprint,那怎么办呢？
 
     非常简单，在页面里插入js代码：    
@@ -32,7 +32,7 @@ Let's have a try!
 			});
 		</script>	
 		
-    即可。
+	也就是:为每个自动生成的`<pre>`标签当添加上`.prettyprint`类,这样一来,我们引入的样式表和脚本就能对其生效了.
 
 4.    在第2步下载的样式表是默认样式表，如果你希望换成其他样式，去[prettify主题列表](http://google-code-prettify.googlecode.com/svn/trunk/styles/index.html)里选择一种你希望的样式，下载并替换掉上面说到的prettify.css即可。当然，你也可以直接修改css的内容来自定义样式。
 
@@ -46,36 +46,36 @@ prettify.js中的注释是权威的,但是它的语法分析程序可以在很�
 
 LISP系列的语言可以使用一个拓展lang-lisp.js.
 
-<div>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-apollo.js">Apollo</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-basic.js">Basic</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-clj.js">Clojure</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-css.js">CSS</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-dart.js">Dart</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-erlang.js">Erlang</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-go.js">Go</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-hs.js">Haskell</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-lisp.js">Lisp, Scheme</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-llvm.js">Llvm</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-lua.js">Lua</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-matlab.js">Matlab</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-ml.js">MLs:F#, Ocaml,SML</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-mumps.js">Mumps</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-n.js">Nemerle</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-pascal.js">Pascal</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-proto.js">Protocol buffers</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-r.js">R, S</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-rd.js">RD</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-scala.js">Scala</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-sql.js">SQL</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-tcl.js">TCL</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-tex.js">Latek</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-vb.js">Visual Basic</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-vhdl.js">CHDL</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-wiki.js">Wiki</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-xq.js">XQ</a>
-      <a class="Extension" href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-yaml.js">YAML</a>
-    </div>
+
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-apollo.js">Apollo</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-basic.js">Basic</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-clj.js">Clojure</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-css.js">CSS</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-dart.js">Dart</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-erlang.js">Erlang</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-go.js">Go</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-hs.js">Haskell</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-lisp.js">Lisp, Scheme</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-llvm.js">Llvm</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-lua.js">Lua</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-matlab.js">Matlab</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-ml.js">MLs:F#, Ocaml,SML</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-mumps.js">Mumps</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-n.js">Nemerle</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-pascal.js">Pascal</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-proto.js">Protocol buffers</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-r.js">R, S</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-rd.js">RD</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-scala.js">Scala</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-sql.js">SQL</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-tcl.js">TCL</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-tex.js">Latek</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-vb.js">Visual Basic</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-vhdl.js">CHDL</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-wiki.js">Wiki</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-xq.js">XQ</a>
+  <a href="http://code.google.com/p/google-code-prettify/source/browse/trunk/src/lang-yaml.js">YAML</a>
+
 
 如果你想给你喜欢的语言写个拓展版本, 请参阅src/lang-lisp.js ,并写一个包括你的语言的拓展的 发布 和一个测试用例.
 
@@ -98,6 +98,7 @@ You may also use the HTML 5 convention of embedding a code element inside the PR
 		<code class="language-java">...</code>
 	</pre>
 
+参考:
 1. [Javascript code prettifier](http://google-code-prettify.googlecode.com/svn/trunk/README.html) 
 2. 
 

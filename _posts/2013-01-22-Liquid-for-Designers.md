@@ -9,19 +9,19 @@ tags: [jekyll]
 
 
 
-在Liquid中有两种类型的标记： Output and Tag.
+在Liquid中有两种类型的标记： `Output`和 `Tag`.
 
-* 输入标记（有些可能解析文本）被包含在：
-{% raw %} 
-	{{ 两个配对的花括号中 }}
-{% endraw %}
+* 	`Output`标记（有些可能解析文本）被包含在：
+	{% raw %} 
+		{{ 两个配对的花括号中 }}
+	{% endraw %}
 	
-* 标签标记（不能解析文本）被包含在:
-{% raw %} 
-	{% 成对的花括号和百分号中 %}
-{% endraw %}
+*	 `Tag`标记（不能解析文本）被包含在:
+	{% raw %} 
+		{% 成对的花括号和百分号中 %}
+	{% endraw %}
 	
-##输入
+##Output
 下面是关于输出标记的简单实例：
 
 {% raw %}
@@ -37,24 +37,22 @@ tags: [jekyll]
 {% raw %}
 	Hello {{ 'tobi' | upcase }}
 	Hello tobi has {{ 'tobi' | size }} letters!
-	Hello {{ '*tobi*' | textilize | upcase }}
-	Hello {{ 'now' | date: "%Y %h" }}
+	Hello {{ 'tobi' | capitalize }}
+	Hello {{ '1984-02-01' | date: "%Y" }}
 {% endraw %}
 
 输出结果是：
 
-{% raw %}
 	Hello {{ 'tobi' | upcase }}
 	Hello tobi has {{ 'tobi' | size }} letters!
-	Hello {{ '*tobi*' | textilize | upcase }}
-	Hello {{ 'now' | date: "%Y %h" }}
-{% endraw %}
+	Hello {{ 'tobi' | capitalize }}
+	Hello {{ '1984-02-01' | date: "%Y" }}
 
 ###标准过滤器
 
 {% raw %}
-* `date` - reformat a date syntax reference
-* `capitalize` - capitalize words in the input sentence
+* `date` - 格式化日期 [语法参考](http://liquid.rubyforge.org/classes/Liquid/StandardFilters.html#M000012)
+* `capitalize` - 将输入语句的首字母大写
 * `downcase` - 将输入字符串转为小写
 * `upcase` - 将输入字符串转为大写
 * `first` - 得到传递数组的第一个元素
@@ -84,8 +82,8 @@ tags: [jekyll]
 * `modulo` - 余数，如 {{ 3 | modulo:2 }} #=> 1
 {% endraw %}
 
-##标签
-标签用于你的模板逻辑。新的标签很容易开发，因此我希望在发布这些代码后，大家可以为标准标签库增加更多的内容。
+##Tags
+`Tags`用于你的模板逻辑。新的标签很容易开发，因此我希望在发布这些代码后，大家可以为标准标签库增加更多的内容。
 
 下列是当前已经支持的标签：
 
@@ -103,20 +101,27 @@ tags: [jekyll]
 ###注释
 
 注释是最简单的标签，它只是把内容包含起来。
-{% raw %}
-We made 1 million dollars {% comment %} in losses {% endcomment %} this year
-{% endraw %}
+
+	{% raw %}
+	We made 1 million dollars {% comment %} in losses {% endcomment %} this year
+	{% endraw %}
+	
 ###Raw
 
 Raw暂时性的禁用的标签的解析。这在需要展示一些可能产生冲突的内容（如本页面，要展示liquid语句，就需要包含在raw标签间，否则会被解析）时非常有用。 
 
 
-	{{ "{% raw "}}%}{% raw %}In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.{% endraw %} {{ "{% endraw "}}%}
+	{{ "{% raw "}}%}
+	{% raw %}
+		In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
+	{% endraw %} 
+	{{ "{% endraw "}}%}
 
 ###If / Else
 
 if / else在其他编程语言里应该已经被熟知了。Liquid使得你可以通过if或unless（elsif和else为可选）编写简单的表达式:
 
+<pre class="prettyprint lang-rb"><code>
 {% raw %}
 	{% if user %}
 	  Hello {{ user.name }}
@@ -176,19 +181,19 @@ if / else在其他编程语言里应该已经被熟知了。Liquid使得你可�
 	   string includes 'hello'
 	{% endif %}
 {% endraw %}
-
+</code></pre>
 ###Case语句
 
 如果你需要更多的条件判断，你可以使用case语句:
 
 {% raw %}
 	{% case condition %}
-	{% when 1 %}
-	hit 1
-	{% when 2 or 3 %}
-	hit 2 or 3
-	{% else %}
-	... else ...
+		{% when 1 %}
+			hit 1
+		{% when 2 or 3 %}
+			hit 2 or 3
+		{% else %}
+			... else ...
 	{% endcase %}
 {% endraw %}
 
@@ -196,13 +201,13 @@ Example:
 
 {% raw %}
 	{% case template %}
-	
-	{% when 'label' %}
-	     // {{ label.title }}
-	{% when 'product' %}
-	     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
-	{% else %}
-	     // {{page_title}}
+		
+		{% when 'label' %}
+		     // {{ label.title }}
+		{% when 'product' %}
+		     // {{ product.vendor | link_to_vendor }} / {{ product.title }}
+		{% else %}
+		     // {{page_title}}
 	{% endcase %}
 {% endraw %}
 
@@ -304,9 +309,11 @@ Liquid允许循环一个集合 :
 {% raw %}
 	{% assign freestyle = false %}
 	
-	{% for t in collections.tags %}{% if t == 'freestyle' %}
-	  {% assign freestyle = true %}
-	{% endif %}{% endfor %}
+	{% for t in collections.tags %}
+		{% if t == 'freestyle' %}
+		  {% assign freestyle = true %}
+		{% endif %}
+	{% endfor %}
 	
 	{% if freestyle %}
 	  <p>Freestyle!</p>
@@ -319,7 +326,7 @@ Liquid允许循环一个集合 :
 	{% capture attribute_name %}{{ item.title | handleize }}-{{ i }}-color{% endcapture %}
 	
 	<label for="{{ attribute_name }}">Color:</label>
-	<select name="attributes\[{{ attribute_name }}\]" id="{{ attribute_name }}">
+	<select name="attributes[{{ attribute_name }}]" id="{{ attribute_name }}">
 	  <option value="red">Red</option>
 	  <option value="green">Green</option>
 	  <option value="blue">Blue</option>
@@ -327,8 +334,7 @@ Liquid允许循环一个集合 :
 {% endraw %}
 
 
-参考：
-1. [Liquid for Designers](https://github.com/shopify/liquid/wiki/liquid-for-designers)
+参考：[Liquid for Designers](https://github.com/shopify/liquid/wiki/liquid-for-designers)
 
 
 
