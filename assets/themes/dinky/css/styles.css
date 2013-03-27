@@ -24,9 +24,9 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, {
-	color: #232323;
-	word-wrap: break-word;
-	word-break: break-all;
+color: #232323;
+word-wrap: break-word;
+word-break: break-all;
 }
 
 h1, h2, h3 {
@@ -45,11 +45,12 @@ em {
 h1 {
 	border-bottom: 1px dashed #ccc;
 	margin-bottom: 25px;
-	padding-bottom:10px;
+	padding-bottom: 10px;
 }
 
 h1 {
 	font-size: 30px;
+	text-shadow: 1px 1px 0px #F2F2F2, 1px 2px 0px #B1B1B2;
 }
 
 h2 {
@@ -58,7 +59,7 @@ h2 {
 
 h3 {
 	font-size: 18px;
-	margin:15px 0 5px 0;
+	margin: 15px 0 5px 0;
 }
 
 a {
@@ -78,10 +79,10 @@ ul {
 	list-style: none;
 }
 
-
 blockquote {
 	margin: 0;
 	padding: 0 0 0 20px;
+	font-style:italic;
 }
 
 dl, dt, dd, dl p {
@@ -321,7 +322,6 @@ td, th {
 	font-family: microsoft yahei;
 }
 
-
 .top-nav > li {
 	/*border-bottom: 1px dashed #ddd;*/
 	border-bottom: 1px solid rgba(78, 68, 60, 0.1);;
@@ -336,7 +336,7 @@ td, th {
 	background-color: rgba(255, 255, 102, 0);
 	opacity: 0.6;
 	font-size: 1.2em;
-	color: #000;	
+	color: #000;
 	padding: 0 20px;
 	height: 60px;
 	line-height: 60px;
@@ -350,29 +350,12 @@ td, th {
 .top-nav > li > a.active, .top-nav > li > a:hover {
 	opacity: 1;
 	background-color: #E85431;
-	color:#fff;
+	color: #fff;
 }
 /*左栏导航：end*/
 
 /*文章列表:begin*/
 
-.main-inner ol,.main-inner ul{
-	margin:0 0 8px 2em;
-}
-.main-inner ul{
-	list-style-type:disc;
-}
-
-.main-inner li p{
-	text-indent:0;
-}
-.main-inner li pre{
-	margin-left:0;
-}
-.main-inner p{
-	text-indent:2em;
-	margin-bottom:5px;
-}
 .article-list > li {
 	padding: 2.8em 2% 1em 20%;
 	border-bottom: 1px solid rgba(78, 68, 60, 0.1);
@@ -397,6 +380,25 @@ td, th {
 }
 /*文章列表:end*/
 
+/*文章内容:begin*/
+.post-container ol, .post-container ul {
+	margin: 0 0 8px 2em;
+}
+.post-container ul {
+	list-style-type: disc;
+}
+
+.post-container li p {
+	text-indent: 0;
+}
+.post-container li pre {
+	margin-left: 0;
+}
+.post-container p {
+	text-indent: 2em;
+	margin-bottom: 5px;
+}
+/*文章内容:end*/
 /*右栏：begin*/
 .right-col h2 {
 	font-size: 16px;
@@ -425,6 +427,117 @@ td, th {
 	color: #aaa;
 	margin-left: 3px;
 }
+/*关于我页面：begin*/
+.about-container {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+.about-container:before {
+	position: absolute;
+	width: 4px;
+	background: rgba(17,17,22,0.8);
+	top: 0;
+	left: 50%;
+	margin-left: -2px;
+	content: "";
+	height: 100%;
+}
+.about-container > li {
+	width: 100%;
+	padding: 30px 0;
+	float: left;
+}
+.about-left, .about-right {
+	float: left;
+	width: 48%;
+	position: relative;
+}
+.about-left {
+	text-align: right;
+	padding-right: 2%;
+}
+.about-right {
+	padding-left: 2%;
+}
+.about-container h3 {
+	padding: 10px 15px;
+	background: rgba(26, 27, 33, 0.6);
+	text-shadow: 1px 1px 1px rgba(26, 27, 33, 0.8);
+	color: rgba(255,255,255,0.9);
+	margin: 80px 0 0 0;
+}
+.about-circle {
+	border-radius: 50%;
+	overflow: hidden;
+	display: block;
+	box-shadow: 0px 2px 5px rgba(0,0,0,0.7) inset, 0px 0px 0px 12px rgba(61,64,85,0.3);
+	background-size: cover;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 200px;
+	height: 200px;
+}
+.about-circle:before {
+	width: 28%;
+	height: 0px;
+	border-bottom: 5px dotted #ddd;
+	border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
+	box-shadow: 0px 1px 1px #fff;
+	position: absolute;
+	top: 50%;
+	content: '';
+	margin-top: -3px;
+}
+.about-left .about-circle:before {
+	right: 2%;
+}
+.about-right .about-circle:before {
+	left: 2%;
+}
+.about-circle:after {
+	width: 0px;
+	height: 0px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	content: '';
+	position: absolute;
+	top: 50%;
+	margin-top: -10px;
+}
+.about-left .about-circle:after {
+	right: 0;
+	border-right: 10px solid rgba(17,17,22,0.8);
+}
+.about-right .about-circle:after {
+	left: 0;
+	border-left: 10px solid rgba(17,17,22,0.8);
+}
+.about-container > li.small .about-circle {
+	width: 100px;
+	height: 100px;
+}
+.about-container > li.large .about-circle {
+	width: 300px;
+	height: 300px;
+}
+.about-container > li.small h3 {
+	margin: 29px 0 0 0;
+}
+.about-container > li.large h3 {
+	margin: 130px 0 0 0;
+}
+.about-left .about-circle {
+	float: right;
+	margin-right: 30%;
+}
+.about-right .about-circle {
+	float: left;
+	margin-left: 30%;
+}
+
+/*关于我页面：end*/
 
 /*右栏：end*/
 @media print, screen and (max-width: 1024px) {
@@ -437,19 +550,26 @@ td, th {
 	}
 	.main-col {
 		margin-left: 0;
+		width: 100%;
 	}
 	.main-inner {
 		margin-left: 0;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
 	}
 	.top-nav, .top-nav li, .logo {
 		float: left;
 	}
-	.top-nav li > a {
+	.top-nav {
+		margin-bottom: -1px;
+	}
+	.top-nav > li {
+		border-right: 1px solid rgba(78, 68, 60, 0.1);
+		border-bottom: none;
+	}
+	.top-nav > li > a {
 		padding: 10px 20px;
 	}
 	.logo {
+		height: 60px;
 		border: none;
 		border-right: 1px solid rgba(0,0,0,.1);
 		border-left: 1px solid rgba(0,0,0,.1);
