@@ -81,8 +81,9 @@ ul {
 
 blockquote {
 	margin: 0;
-	padding: 0 0 0 20px;
+	padding: 5px 0 5px 20px;
 	font-style:italic;
+	font-size:13px;	
 }
 
 dl, dt, dd, dl p {

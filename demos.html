@@ -1,0 +1,45 @@
+---
+layout: page
+title: DEMO Test 
+header: demos
+group: navigation
+---
+{% include JB/setup %}
+
+<h2>我的demo</h2>
+<div id="clientInfo">
+</div>
+
+<script type="text/javascript">
+	var clientSystem = (function() {
+		var ua = navigator.userAgent, p = navigator.platform;
+	
+		var system = {
+			win : false,
+			iphone : false,
+			ipad : false,
+			android : false,
+			nokiaN : false,
+			winMobile : false
+		}
+		system.win = p.indexOf('Win') == 0;
+		system.iphone = ua.indexOf('iPhone')>-1||ua.indexOf('iPod') > -1;
+		system.ipad = ua.indexOf('iPad') > -1;
+		system.android=/Android (\d+\.\d+)/.test(ua)|| /HTC/.test(ua);/*个别HTC的手机中没有android字段*/
+		system.nokiaN = ua.indexOf('nokiaN') > -1;
+		
+		return system;
+	
+	})();
+	var obj=clientSystem,des="";
+	for(var i in obj){
+		var prop=obj[i],str="";
+		if(prop){
+			str='<p style="color:#c03;font-weight:bold">'+i+" = "+obj[i]+'</p>';
+		}else{
+			str='<p>'+i+" = "+obj[i]+'</p>';
+		}
+		des+=str;
+	}
+	$("#clientInfo").html(des);
+</script>
