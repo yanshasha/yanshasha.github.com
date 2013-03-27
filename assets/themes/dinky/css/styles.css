@@ -598,50 +598,61 @@ td, th {
 }
 
 @media print, screen and (max-width: 720px) {
-	.wrapper{padding:0;}
 	.logo{
-		height:45px;
-		line-height:45px;
-		padding:0 10px;
+		height:50px;
+		line-height:50px;
+		padding:0 12px;
 	}
 	.logo a{
 		font-size:16px;
 
 	}
 	.top-nav>li>a{
-		padding:0 5px;
+		padding:0 6px;
 		font-size:1em;
-		height:45px;
-		line-height:45px;
+		height:50px;
+		line-height:50px;
 	}
 	.main-col{
 		margin-right:0;
+	}
+	.main-inner{
+		margin-right:20px;
+		padding:5px 5% 20px 5%;
+		border-radius:0 10px 10px 10px;
+	}
+	.right-col{
+		display:none;
+	}
+
+}
+
+@media print, screen and (max-width: 480px) {
+	.wrapper{padding:0;}
+	.logo{
+		height:45px;
+		line-height:45px;
+		padding:0 10px;
+	}
+
+	.top-nav>li>a{
+		padding:0 5px;
+		height:45px;
+		line-height:45px;
 	}
 	.main-inner{
 		margin:0 10px;
 		border-radius:10px;
 		padding:5px 5% 20px 5%;
 	}
-	.right-col{
-		display:none;
-	}
-	.top-nav, .top-nav li {
+
+	.top-nav, .top-nav li,.logo {
 		float: none;
 		}
 	.top-nav > li > a {
 		text-align:center;
 	}
-}
 
-@media print, screen and (max-width: 480px) {
-	.logo{
-		display:none;
-	}
-	.top-nav>li>a{
-		padding:0 5px;
-		font-size:1em;
-		
-	}
 }
 
 @media print {
