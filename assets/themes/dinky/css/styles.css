@@ -645,9 +645,14 @@ td, th {
 		border-radius:10px;
 		padding:5px 5% 20px 5%;
 	}
-
-	.top-nav, .top-nav li,.logo {
-		float: none;
+.logo{
+	display:none;
+}
+	.top-nav li{
+		/*float: none;*/
+		width:33%;
+		
+		
 		}
 	.top-nav > li > a {
 		text-align:center;

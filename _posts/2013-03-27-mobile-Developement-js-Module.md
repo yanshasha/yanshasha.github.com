@@ -127,6 +127,17 @@ Android浏览器中的默认格式与ios格式相似，没有移动版本号（�
 
 <h2 id="clickState">增加手机点击态</h2>
 <h2 id="fixed">支持fixed定位</h2>
+关于漂浮定位，测试后发现 { position: fixed; } 不能为其用，
+可以改为 { position:absolute; } 来实现，可以使用iphone看下DEMO：iphone-fixed-positioning
+
+position:fixed
+在pc上我们经常使用position:fixed，在iphone上似乎并不管用，官方给了很多解释，但是它还是不好使，这样我们只能自己来 实现这种效果，首先我们需要一个setPosition方法，
+function setPosition(top, left){ //根据top、left把元素设置到视图区相应位置 }
+然后，我们需要注册scroll事件和onrientation事件
+element.addEventListener('scroll', setPosition); element.addEventListener('onrientationchange', setPosition);
+具体代码可以参考Tangram Mobile的Toolbar组件
+
+
 <h2 id="screenOrient">检测屏幕翻转</h2>
 我曾经也想禁止用户旋转设备，也想实现像某些客户端那样：只能在肖像模式或景观模式下才能正常运行。但遗憾的是，在移动版的webkit中做不到！
 
