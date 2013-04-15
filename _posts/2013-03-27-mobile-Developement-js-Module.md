@@ -51,6 +51,7 @@ tags: [mobile]
 </ol>
 
 <h2 id="clientType">判断客户端类型</h2>
+
 ###关于UA
 ios和android的默认浏览器都是基于webkit内核的，而且像它们的桌面版一样，共享相同的基本用户代理字符串格式。
 ios设备的基本格式如下：
@@ -100,6 +101,7 @@ Android浏览器中的默认格式与ios格式相似，没有移动版本号（�
 				
 <h2 id="networkStatus">判断网络状况</h2>
 <h2 id="hideAddress">自动隐藏地址栏</h2>
+
 这是个很常见的需求，也非常必要。由于手机设备的高度本来就不高，而地址栏总会占用很多的空间，这会影响页面内容的展示。而且为了让webapp看上去更像nativeapp，自动隐藏地址栏也是非常必要的。那么，怎样实现呢？
 
 网上一搜，很多答案，往往都是一行简单的代码: 
@@ -127,6 +129,7 @@ Android浏览器中的默认格式与ios格式相似，没有移动版本号（�
 
 <h2 id="clickState">增加手机点击态</h2>
 <h2 id="fixed">支持fixed定位</h2>
+
 关于漂浮定位，测试后发现 { position: fixed; } 不能为其用，
 可以改为 { position:absolute; } 来实现，可以使用iphone看下DEMO：iphone-fixed-positioning
 
@@ -139,6 +142,7 @@ element.addEventListener('scroll', setPosition); element.addEventListener('onrie
 
 
 <h2 id="screenOrient">检测屏幕翻转</h2>
+
 我曾经也想禁止用户旋转设备，也想实现像某些客户端那样：只能在肖像模式或景观模式下才能正常运行。但遗憾的是，在移动版的webkit中做不到！
 
 正如Apple webapp API所说的：我们为了让用户在safari中正常的浏览网页，我们必须保证用户的设备处于任何一个方位时，safari都能够正常的显示网页内容（也就是自适应），所以我们禁止开发者阻止浏览器的orientationchange事件。
@@ -159,6 +163,7 @@ iOS已经禁止开发者阻止orientationchange事件，那Android呢？貌似�
 	};
 
 <h2 id="getScroll">获取滚动条</h2>
+
 桌面浏览器中想要获取滚动条的值是通过document.scrollTop和document.scrollLeft得到的，但在iOS中你会发现这两个属性是未定义的，为什么呢？因为在iOS中没有滚动条的概念，在Android中通过这两个属性可以正常获取到滚动条的值，那么在iOS中我们该如何获取滚动条的值呢？
 通过window.scrollY和window.scrollX我们可以得到当前窗口的y轴和x轴滚动条的值。
 
