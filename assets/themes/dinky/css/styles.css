@@ -23,7 +23,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6, {
+h1, h2, h3, h4, h5, h6{
 color: #232323;
 word-wrap: break-word;
 word-break: break-all;
@@ -41,6 +41,8 @@ h1, h2, h3 {
 }
 em {
 	font-style: normal;
+	border-bottom: 2px dotted;
+    padding-bottom: .05em;
 }
 h1 {
 	border-bottom: 1px dashed #ccc;
