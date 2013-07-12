@@ -58,7 +58,7 @@ tags: [jekyll]
 
 在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。
 
-在C:\Documents and Settings\用户名下，有个隐藏目录名为.ssh，id_rsa.pub文件就是公钥，id_rsa就是密钥。如果看不到这个文件，你需要设置显示隐藏文件。
+在C:\Documents and Settings\用户名下(也有可能是在你安装的git文件夹下)，有个隐藏目录名为.ssh，id_rsa.pub文件就是公钥，id_rsa就是密钥。如果看不到这个文件，你需要设置显示隐藏文件。
 
 在Github网站找到 “Account Settings” >  “SSH Keys” >  “Add SSH key”。用文本编辑器打开id_rsa.pub文件，并把里面的内容（包括空格和新行）复制出来。
 选择SSH Keys项，把复制的内容粘贴进去，然后点击Add Key按钮即可：输入完成后，你会看到你生成的公共SSH key。
