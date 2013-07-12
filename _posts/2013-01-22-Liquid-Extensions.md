@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Liquid Extensions"
+title: "Liquid Extensions(译)"
 description: ""
 category: site
 tags: [jekyll]

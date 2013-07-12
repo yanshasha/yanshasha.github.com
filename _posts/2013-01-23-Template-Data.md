@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Template Data"
+title: "Template Data(译)"
 description: ""
 category: site
 tags: [jekyll]

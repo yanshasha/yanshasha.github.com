@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Liquid for Designers"
+title: "Liquid for Designers(译)"
 description: ""
 category: site
 tags: [jekyll]
