@@ -10,17 +10,17 @@ tags: [mobile]
 <ol class="directory">
 	<li>
 		<a href="#metas">
-			特殊meta标签
+			
 		</a>
 	</li>
 	<li>
 		<a href="#autoCapitalize">
-			关闭ios中键盘自动大写
+			
 		</a>
 	</li>
 	<li>
 		<a href="#touchCallout">
-			ios利用css禁用长按默认行为
+			
 		</a>
 	</li>
 	

@@ -82,10 +82,15 @@ ul {
 }
 
 blockquote {
-	margin: 0;
-	padding: 5px 0 5px 20px;
-	font-style:italic;
-	font-size:13px;	
+	margin: 5px 0;
+	padding: 8px 0 8px 10px;
+	font-size:14px;	
+	position: relative;
+font-family: Georgia,"Times New Roman",Times,"STFangsong","KaiTi",serif;
+font-weight: 100;
+line-height: 27px;
+border-left: 4px solid #999;
+background-color: #f6f6f6;
 }
 
 dl, dt, dd, dl p {
