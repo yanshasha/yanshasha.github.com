@@ -367,6 +367,7 @@ td, th {
 .article-list > li {
 	padding: 2.8em 2% 1em 20%;
 	border-bottom: 1px solid rgba(78, 68, 60, 0.1);
+	overflow:hidden;
 }
 .article-list header a {
 	color: rgba(78, 68, 60, 0.9);
