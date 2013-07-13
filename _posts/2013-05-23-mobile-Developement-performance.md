@@ -22,6 +22,14 @@ tags: [mobile]
 对于动态生成DOM元素或HTML片段的代码，通常将重复的代码片段整理成模版，然后通过程序一次性生成并渲染到Web页面中。这样做的优点是建立统一模版，减少页面渲染的次数
 6. 选择性加载外部文件。
 如非必要，不要一次性加载所有Web App页面、JavaScirpt、CSS代码。可以通过按模块加载或者按需加载。
+7. 将图片存储为适当的格式以减少它们的尺寸.
+如果你的网站有很多图片,那么怎样选择最适合的图片格式就非常重要了. web图片文件存储的格式中主要有三种: JPEG, GIF和PNG.一般情况下,如果是色调比较单一的图标,可以使用GIF或PNG,而如果图片的色彩比较丰富,比如平滑的渐变,照片等就最好使用JPEG. 
+GIF和PNG这两种格式很类似,但是一般PNG尺寸更小一点.关于这两种格式的比较,可以参考下这篇文章:<a title="Getting the Most Out of PNG on Coding Horror." href="http://www.codinghorror.com/blog/archives/000810.html">weigh-in on using PNG’s  over GIF’s</a>
+8. 使用CSS sprites以减少HTTP请求
+CSS Sprite即把多张小图合并为一张大图,然后通过 background-position属性来控制小图的显示.你可以自己手动拼,可以使用如cssgaga之类的自动化的工具来拼图.
+9.避免使用行内css和Javascript
+默认情况下,外部引入的css和Javascript文件是会被用户浏览器缓存下来的.而如果你的css和js都是写在HTML文档里,他们是不会缓存的,这样就没法利用web浏览器的缓存特性了.
+
 
 ##高性能的JavaScript
 1. 尽可能使用基于移动端优化的工具或类库，如zeptojs、jqMobl、iScroll等。
@@ -49,15 +57,10 @@ tags: [mobile]
 10. 使用JSON数据格式.
 数据传输格式方面建议使用JSON。JSON是轻量级的并且解析速度快。不推荐使用XML。
 11. 注意JavaScript内存问题，包括闭包产生的内存问题。 
-12.在HTML文档中，将inline的 JavaScript代码转化为独立的JavaScript文件
-虽然JavaScript是动态解释执行的语言，绝大多数的Web Runtime为了提高JavaScript的解释执行时间，都会将JavaScript进行预编译为一个中间态的文件。WebKit，IE10等都不例外。但是HTML文档中的JavaScript代码是无法被预编译为中间态文件的，这会显著减低执行效率和时间，因此建议开发人员将HTML中的JavaScript代码剥离出来，放入单独的JavaScript文件中
 
 13. 合并和压缩JavaScript代码,由于脚本的阻塞特性，将JavaScript脚本放在文件的最底端以及成组加载
 由于每个`<script>`标签在下载时都会阻塞页面解析的过程，所以限制页面`<script>`总数也可以改善性能。所以成组加载JavaScript脚本可以提升页面整体性能，这个规则不仅对内联脚本有效，对外部脚本同样适用。
 
-原因是在于每个HTTP 请求都会产生额外的性能负担，下载一个100KB的脚本远比下载4个25KB的脚本要快。
-
-同时将页面和页面初始化无关的JavaScript文件放在页面的最低端进行加载都可以提高性能。
 
 ##合理使用CSS属性
 1. 使用CSS Sprite或把图片转换成Data URL scheme处理图片。
