@@ -9,7 +9,7 @@ tags: [mobile]
 
 在开发web app的时候,由于手机浏览器本身性能的问题,在开发时提高代码性能就显得尤为重要.下面是一些可以帮助提高代码性能的tips,大部分都是来自网上的资料,我在这里做了一下整理,希望能帮助大家提高web app的运行效率.
 
-##高效的Web App页面
+##页面
 1. 建议使用HTML5新标签布局页面。
 例如header、footer、section、nav、article。因为他们速度快，结构合理，浏览器上识别能力强。
 2. 减少HTML标签嵌套深度。
@@ -25,13 +25,11 @@ tags: [mobile]
 7. 将图片存储为适当的格式以减少它们的尺寸。
 如果你的网站有很多图片,那么怎样选择最适合的图片格式就非常重要了. web图片文件存储的格式中主要有三种: JPEG, GIF和PNG.一般情况下,如果是色调比较单一的图标,可以使用GIF或PNG,而如果图片的色彩比较丰富,比如平滑的渐变,照片等就最好使用JPEG. 
 GIF和PNG这两种格式很类似,但是一般PNG尺寸更小一点.关于这两种格式的比较,可以参考下这篇文章:<a title="Getting the Most Out of PNG on Coding Horror." href="http://www.codinghorror.com/blog/archives/000810.html">weigh-in on using PNG’s  over GIF’s</a>
-8. 使用CSS sprites以减少HTTP请求。
-CSS Sprite即把多张小图合并为一张大图,然后通过 background-position属性来控制小图的显示.你可以自己手动拼,可以使用如cssgaga之类的自动化的工具来拼图.
-9.避免使用行内css和Javascript。
+8.避免使用行内css和Javascript。
 默认情况下,外部引入的css和Javascript文件是会被用户浏览器缓存下来的.而如果你的css和js都是写在HTML文档里,他们是不会缓存的,这样就没法利用web浏览器的缓存特性了.
 
 
-##高性能的JavaScript
+##JavaScript
 1. 尽可能使用基于移动端优化的工具或类库，如zeptojs、jqMobl、iScroll等。
 由于jQuery、prototype.js等JS库文件较大，不利于移动端的网络传输，同时他们提供的功能更多的是兼容PC桌面端各种浏览器的差异，并没有针对移动端独有的优化，所以一般不建议使用。
 2. 按需加载JavaScript文件。
@@ -62,8 +60,9 @@ CSS Sprite即把多张小图合并为一张大图,然后通过 background-positi
 由于每个`<script>`标签在下载时都会阻塞页面解析的过程，所以限制页面`<script>`总数也可以改善性能。所以成组加载JavaScript脚本可以提升页面整体性能，这个规则不仅对内联脚本有效，对外部脚本同样适用。
 
 
-##合理使用CSS属性
-1. 使用CSS Sprite或把图片转换成Data URL scheme处理图片。
+##CSS
+1. 使用CSS Sprite或把图片转换成Data URL scheme处理图片,以减少HTTP请求。
+CSS Sprite即把多张小图合并为一张大图,然后通过 background-position属性来控制小图的显示.你可以自己手动拼,可以使用如cssgaga之类的自动化的工具来拼图.
 2. 减少使用\*或多class选择器。
 CSS方面性能消耗最大的就是选择器。减少使用\*就是减少查找元素数量，提升CSS选择器查询性能。
 3. 减少阴影、渐变样式的使用。
