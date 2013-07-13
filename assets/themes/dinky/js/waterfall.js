@@ -232,7 +232,7 @@ function addList(el,jsonObj,childClass){
 		//$id("aaa1").innerHTML =$id("aaa1").innerHTML + src+","
 		
 		//params
-		imgReady("/assets/themes/dinky/images/photos/"+src+".jpg",jsonObj.images.length , i , el , newBox , childClass , place,function () {
+		imgReady("/assets/images/photos/"+src+".jpg",jsonObj.images.length , i , el , newBox , childClass , place,function () {
 
 			var height = this.height;
 
