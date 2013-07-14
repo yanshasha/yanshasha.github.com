@@ -302,6 +302,8 @@ td, th {
 .footer {
 	text-align: center;
 	clear: both;
+	color:#888;
+	padding:20px;
 }
 .footer img {
 	display: none;
