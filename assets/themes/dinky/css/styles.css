@@ -8,8 +8,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	border: 0;
 	font: inherit;
 	vertical-align: baseline;
-	word-wrap: break-word;
-	word-break: break-all;
 }
 
 /* Base text styles */
@@ -437,113 +435,48 @@ td, th {
 	margin-left: 3px;
 }
 /*关于我页面：begin*/
-.about-container {
-	width: 100%;
-	position: relative;
-	overflow: hidden;
+#aboutPage{
+	padding:30px 10px 50px 10px;
 }
-.about-container:before {
-	position: absolute;
-	width: 4px;
-	background: rgba(17,17,22,0.8);
-	top: 0;
-	left: 50%;
-	margin-left: -2px;
-	content: "";
-	height: 100%;
+#aboutPage .row{
+	position:relative;
+	max-width:1000px;
 }
-.about-container > li {
-	width: 100%;
-	padding: 30px 0;
-	float: left;
+#aboutPage .about-text{
+	margin-right:263px;
 }
-.about-left, .about-right {
-	float: left;
-	width: 48%;
-	position: relative;
+#aboutPage .about-image{
+	position:absolute;
+	top:0;
+	right:0;
 }
-.about-left {
-	text-align: right;
-	padding-right: 2%;
+
+#aboutPage .myavatar{
+	display:block;
+	width:200px;
+	transform:rotate(-4deg);
+-ms-transform:rotate(-4deg); /* IE 9 */
+-webkit-transform:rotate(-4deg); /* Safari and Chrome */
 }
-.about-right {
-	padding-left: 2%;
+#aboutPage h2{
+	font-family: "neosans regular","Helvetica Neue",Helvetica,Arial,Sans-serif;
+	font-size:38px;
+	margin-top:0;
 }
-.about-container h3 {
-	padding: 10px 15px;
-	background: rgba(26, 27, 33, 0.6);
-	text-shadow: 1px 1px 1px rgba(26, 27, 33, 0.8);
-	color: rgba(255,255,255,0.9);
-	margin: 80px 0 0 0;
+#aboutPage .about-intro{
+	color:#888;
+	font-size:18px;
+	font-family:"microsoft yahei","yahei","楷体";
+	margin:8px 0;
 }
-.about-circle {
-	border-radius: 50%;
-	overflow: hidden;
-	display: block;
-	box-shadow: 0px 2px 5px rgba(0,0,0,0.7) inset, 0px 0px 0px 12px rgba(61,64,85,0.3);
-	background-size: cover;
-	background-color: #f0f0f0;
-	background-repeat: no-repeat;
-	background-position: center center;
-	width: 200px;
-	height: 200px;
+#aboutPage .about-intro strong{
+	color:#333;
+	font-size:22px;
+	margin:0 3px;
 }
-.about-circle:before {
-	width: 28%;
-	height: 0px;
-	border-bottom: 5px dotted #ddd;
-	border-bottom: 5px dotted rgba(17, 17, 22, 0.3);
-	box-shadow: 0px 1px 1px #fff;
-	position: absolute;
-	top: 50%;
-	content: '';
-	margin-top: -3px;
-}
-.about-left .about-circle:before {
-	right: 2%;
-}
-.about-right .about-circle:before {
-	left: 2%;
-}
-.about-circle:after {
-	width: 0px;
-	height: 0px;
-	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-	content: '';
-	position: absolute;
-	top: 50%;
-	margin-top: -10px;
-}
-.about-left .about-circle:after {
-	right: 0;
-	border-right: 10px solid rgba(17,17,22,0.8);
-}
-.about-right .about-circle:after {
-	left: 0;
-	border-left: 10px solid rgba(17,17,22,0.8);
-}
-.about-container > li.small .about-circle {
-	width: 100px;
-	height: 100px;
-}
-.about-container > li.large .about-circle {
-	width: 300px;
-	height: 300px;
-}
-.about-container > li.small h3 {
-	margin: 29px 0 0 0;
-}
-.about-container > li.large h3 {
-	margin: 130px 0 0 0;
-}
-.about-left .about-circle {
-	float: right;
-	margin-right: 30%;
-}
-.about-right .about-circle {
-	float: left;
-	margin-left: 30%;
+#aboutPage .about-code{
+	margin:5px 0;
+	padding:5px 18px;
 }
 
 /*关于我页面：end*/
