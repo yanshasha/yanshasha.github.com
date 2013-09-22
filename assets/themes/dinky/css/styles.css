@@ -480,6 +480,62 @@ td, th {
 	margin:5px 0;
 	padding:5px 18px;
 }
+#aboutPage .timeline{
+	position:relative;
+	margin-top:150px;
+	height:60px;
+}
+#aboutPage .line{
+	height:4px;
+	background-color:#888;
+	width:100%;
+	top:50%;
+	margin-top:-2px;
+	position:absolute;
+}
+#aboutPage .time-item{
+	position:relative;
+	display:inline-block;
+	zoom:1;
+	margin-right:50px;
+}
+#aboutPage .time{
+	display:block;
+	background-color:#a03;
+	color:#fff;
+	border-radius:60px;
+	width:60px;
+	height:60px;
+	line-height:60px;
+	text-align:center;
+}
+#aboutPage .event{
+	background-color:rgba(0,0,0,.8);
+	padding:10px;
+	border-radius:4px;
+	-webkit-border-radius:4px;
+	display:none;
+	position:absolute;
+	bottom:40px;
+	color:#fff;
+}
+#aboutPage .event:before{
+	content:"";
+	display:block;
+	position:absolute;
+	bottom:-20px;
+	height:0;
+    width:0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    border-color:rgba(0,0,0,.8) transparent transparent transparent;
+    border-style:solid dashed dashed dashed;
+    border-width:40px 0 0 0 ;
+}
+#aboutPage .time-item:hover .event{
+	display:block;
+}
 
 /*关于我页面：end*/
 

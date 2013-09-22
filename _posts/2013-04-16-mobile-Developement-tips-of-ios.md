@@ -26,6 +26,23 @@ tags: [mobile]
 	
 
 </ol>
+<h2 id="detect">检测iPhone 5/iOS 6</h2>
+
+检测iOS 6很简单，用ua就可以了：
+
+>Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25
+
+但是刷了iOS 6的所有iPhone的ua都是这个，那么判断是否是iPhone 5就要用js或者media query的方法了：
+
+js：
+
+>isPhone4inches = (window.screen.height==568);
+
+CSS：
+
+>@media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+>/* iPhone 5 or iPod Touch 5th generation */
+>}
 
 <h2 id="metas">特殊meta标签</h2>
 
@@ -66,12 +83,30 @@ iphone会将页面中的一串数字识别为电话号码，如果点击那串�
 
 <h2 id="fixed">支持fixed定位</h2>
 
+<h2 id="upload">ios6支持上传</h2>
+在ios6以下,都是不支持文件上传的;而从ios6开始,可以简单的支持文件上传了，同时也支持多文件上传：
 
+	<input type="file"><!--单文件-->
+	<input type="file" multiple> <!--多文件-->
+但是，由于iOS的资源管理机制的限制，你只能上传照片和视频，不能上传其它格式文件，也不支持getUserMedia api(camera api)。
 
+<h2 id="banner">smart app banner</h2>
+如果你的网站同时提供的有app在itunes app store，可以通过一个简单的meta标签来提示用户，让用户下载安装你的native app(或者是hybrid app)：
+
+	<meta name="apple-itunes-app" content="app-id=9999999">
+
+也支持itunes affiliate program（推广联盟）：
+
+	<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx">
+	<meta name="apple-itunes-app" content="app-id=9999999, app-argument=xxxxxx, affiliate-data=partnerId=99&siteID=XXXX">
+
+需要注意的是，app banner占位为156px的高度——高分屏为312px。
+
+<h2 id="f-">smart app banner</h2>
 
 参考:
 1. [Javascript code prettifier](http://google-code-prettify.googlecode.com/svn/trunk/README.html) 
-2. 
+2. [iPhone 5/iOS 6前端开发指南](http://www.qianduan.net/iphone5ios6-front-end-development-guide.html)
 
 
 
