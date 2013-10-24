@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "装修自修课一：知识储备篇"
+title: "装修自修课一：知识储备"
 description: ""
 category: life
 tags: [life]
