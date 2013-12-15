@@ -55,10 +55,12 @@ DS18B20的面包板布线图如下:
 一定要以正确的方式来连接DS18B20,如下图所示,它 的弯角应该向左.如果放犯了,它就可能会变热烧掉.
 
 Note:尽管同样是温度传感器,DS18B20和TMP36是完全不一样的,本教材不适用于TMP36.
+
 <img class="3781-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/781/medium800/breadboard-ic.png?1359394493" width="521" height="835" alt="breadboard-ic.png">
 
 如果你使用的是防水版的DS18B20,那么设备会有三根引线:红线,黑线和黄线.那根裸铜线不需要连接.
 如果你使用的是"高温"版的DS18B20,将橙色条纹线连接到3.3V,白线接地,蓝条纹线接数据,引脚#4.在数据与3.3V电压间,你还需要一个4.7K~10K的电阻.
+
 <a href="http://learn.adafruit.com/assets/3782">
             <img class="3782-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/782/medium800/breadboard-probe.png?1359394521" width="521" height="650" alt="breadboard-probe.png">
 </a>
