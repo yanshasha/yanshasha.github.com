@@ -2,11 +2,25 @@
  * @author yanshasha
  */
 $('.show-en').on('click',function(){
-    $('.en').toggle();
-    $(this).toggleClass('active');
+    $('.ch').hide();
+    $('.en').show();
+    $('.show-ch').removeClass('active');
+    $('.show-both').removeClass('active');
+    $(this).addClass('active');
 });
 
-$('.show-cn').on('click',function(){
-    $('.cn').toggle();
-    $(this).toggleClass('active');
+$('.show-ch').on('click',function(){
+    $('.en').hide();
+    $('.cn').show();
+    $('.show-en').removeClass('active');
+    $('.show-both').removeClass('active');
+    $(this).addClass('active');
+});
+
+$('.show-both').on('click',function(){
+    $('.ch').show();
+    $('.en').show();
+    $('.show-en').removeClass('active');
+    $('.show-both').removeClass('active');
+    $(this).addClass('active');
 });
