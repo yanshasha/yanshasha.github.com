@@ -11,7 +11,7 @@ $('.show-en').on('click',function(){
 
 $('.show-ch').on('click',function(){
     $('.en').hide();
-    $('.cn').show();
+    $('.ch').show();
     $('.show-en').removeClass('active');
     $('.show-both').removeClass('active');
     $(this).addClass('active');

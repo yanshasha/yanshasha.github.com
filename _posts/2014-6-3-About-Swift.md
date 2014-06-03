@@ -8,8 +8,8 @@ tags: [swift]
 {% include JB/setup %}
 > 译者注：听说昨晚苹果发布新编程语言的事，和大家一样，偶也很激动~ 作为有点前端底子的pm，其实还是一直想学学ios开发的~这样哪天自己有点小点子也可以不用到处找研发来帮自己开发（研发一般也很忙哇~）。简单看了下这们新语言，感觉应该比object-c要简单一些，就下定决心开始学了~ 作为没翻译过几篇文章的新手，我也属于边译边学的过程，大神们看到翻译的实在看不下去的地方，欢迎随时指正~
 
-<span class="show-en active">中</span>
-<span class="show-ch">英</span>
+<span class="show-ch active">中</span>
+<span class="show-en">英</span>
 <span class="show-both">中&英</span>
 
 
