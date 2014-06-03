@@ -13,7 +13,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* Base text styles */
 
 body {
-	font-family: Arial,'Times New Roman','Microsoft YaHei',SimHei;
+	font-family: Arial,'Times New Roman','宋体',SimHei;
 	font-size: 14px;
 	color: #333;
 	background-color: #f4f4f4;
@@ -84,7 +84,7 @@ blockquote {
 	padding: 8px 0 8px 10px;
 	font-size: 14px;
 	position: relative;
-	font-family: Georgia, "Times New Roman", Times, "STFangsong", "KaiTi", serif;
+	font-family: Georgia, "Times New Roman", "楷体", serif;
 	font-weight: 100;
 	line-height: 27px;
 	border-left: 4px solid #999;
@@ -353,6 +353,7 @@ td, th {
 	-o-transition: all 0.2s linear;
 	-ms-transition: all 0.2s linear;
 	transition: all 0.2s linear;
+	font-family: arial,"microsoft yahei";
 }
 
 .top-nav > li > a.active, .top-nav > li > a:hover {
