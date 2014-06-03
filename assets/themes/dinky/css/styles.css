@@ -13,7 +13,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* Base text styles */
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Arial,'Times New Roman','Microsoft YaHei',SimHei;
 	font-size: 14px;
 	color: #333;
 	background-color: #f4f4f4;
@@ -576,14 +576,17 @@ td, th {
 .en{
     display:none;
 }
+.en,.ch{
+    margin-bottom:10px;
+}
 .show-en,.show-ch,.show-both{
     display:inline-block;
     font-size:15px;
-    margin-right:20px;
-    margin-bottom:10px;
+    margin-right:20px;   
     text-decoration:none;
     color:#0088cc;
 }
+
 .show-en.active,.show-ch.active,.show-both.active{    
     text-decoration:underline;
     color:#333;
