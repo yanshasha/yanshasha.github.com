@@ -571,6 +571,20 @@ td, th {
 }
 /*带图片表格样式:end*/
 
+
+/*中英文切换：begin*/
+.en{
+    display:none;
+}
+.show-en,.show-ch{
+    font-size:14px;
+    margin-right:15px;
+}
+.show-en.active,.show-ch.active{
+    font-weight:bold;
+}
+/*中英文切换：end*/
+    
 /*右栏：end*/
 @media print, screen and (max-width: 1024px) {
 	.wrapper {
