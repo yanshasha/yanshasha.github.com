@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Swift Programming Language-About Swift"
+title: "The Swift Programming Language（译）-About Swift"
 description: ""
 category: ios
 tags: [swift]
