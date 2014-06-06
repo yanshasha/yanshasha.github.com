@@ -586,6 +586,7 @@ td, th {
     margin-right:20px;   
     text-decoration:none;
     color:#0088cc;
+    cursor:pointer;
 }
 
 .show-en.active,.show-ch.active,.show-both.active{    

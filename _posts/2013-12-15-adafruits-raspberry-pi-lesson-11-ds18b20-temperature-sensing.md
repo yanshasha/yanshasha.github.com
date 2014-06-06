@@ -11,8 +11,6 @@ tags: [Raspberry Pi]
 
 树莓派的Occidentalis Linux发行版(以及从2012年12月开始)开始支持了DS18B20单总线温度传感器.这些传感器是类晶体管的三引脚包,是精确的数字设备.
 
-<img width="521" height="509" src="http://learn.adafruit.com/system/assets/assets/000/003/775/medium800/summary.jpg" alt="summary.jpg">
-
 在本次教程中,你将学会如何使用通过树莓派来读取一个DS18B20温度传感器的度数. 由于树莓派没有ADC(模数转换器),因此它不能直接使用像TMP36那样的模拟温度传感器,而DS18B20则是一个很好的温度传感器的选择.
 
 ##所需设备
@@ -56,18 +54,8 @@ DS18B20的面包板布线图如下:
 
 Note:尽管同样是温度传感器,DS18B20和TMP36是完全不一样的,本教材不适用于TMP36.
 
-<img class="3781-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/781/medium800/breadboard-ic.png?1359394493" width="521" height="835" alt="breadboard-ic.png">
-
 如果你使用的是防水版的DS18B20,那么设备会有三根引线:红线,黑线和黄线.那根裸铜线不需要连接.
 如果你使用的是"高温"版的DS18B20,将橙色条纹线连接到3.3V,白线接地,蓝条纹线接数据,引脚#4.在数据与3.3V电压间,你还需要一个4.7K~10K的电阻.
-
-<a href="http://learn.adafruit.com/assets/3782">
-            <img class="3782-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/782/medium800/breadboard-probe.png?1359394521" width="521" height="650" alt="breadboard-probe.png">
-</a>
-
-<a href="http://learn.adafruit.com/assets/3783">
-            <img class="3783-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/783/medium800/project_probe.jpg?1359394607" width="521" height="490" alt="project_probe.jpg">
-</a>
 
 
 
@@ -84,9 +72,6 @@ Note:尽管同样是温度传感器,DS18B20和TMP36是完全不一样的,本教�
 	cd 28-xxxx (change this to match what serial number pops up)
 	cat w1_slave
 
-<a href="http://learn.adafruit.com/assets/3783/assets/3784">
-            <img class="3784-asset" src="http://learn.adafruit.com/assets/3783/system/assets/assets/000/003/784/medium800/modprobe.png?1359394795" alt="modprobe.png">
-</a>
 
 这个接口并不完全可靠,但是幸运的是它能告诉我们是否存在一个有效的温度来读取.它就像一个文件一样,我们要做的就是去读取.
 在第一行末尾的相应值要么是YES要么是NO.如果是YES,那么温度会以1/1000摄氏度的形式显示在第二行的末尾.也就是说,在上面的例子里,两次读到的温度分别为20.687 和26.125摄氏度.
@@ -154,10 +139,7 @@ Note:尽管同样是温度传感器,DS18B20和TMP36是完全不一样的,本教�
 你可以通过SSH连接到派,在编辑窗口中粘贴下面这行代码,CTRL-x 和 Y保存文件,以此将程序上传到你的树莓派里去:
 
 	nano thermometer.py
-	
-<a href="http://learn.adafruit.com/assets/3785">
-<img class="3785-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/785/medium800/ssh_edior.png?1359394951" alt="ssh_edior.png" width="521" height="332">
-</a>
+
 
 ##配置并测试
 
@@ -167,9 +149,6 @@ Note:尽管同样是温度传感器,DS18B20和TMP36是完全不一样的,本教�
 
 如果一切ok,你将会看到一串类似下图所示的读数:
 
-<a href="http://learn.adafruit.com/assets/3786">
-<img class="3786-asset" src="http://learn.adafruit.com/system/assets/assets/000/003/786/medium800/readings.png?1359395011" alt="readings.png" width="521" height="329">
-</a>
 
 试着把你的手指放到传感器的上面来提高它的温度.
 

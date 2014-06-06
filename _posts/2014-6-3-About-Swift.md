@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "The Swift Programming Language（译）-About Swift"
+title: "About Swift（中/英）"
 description: ""
-category: ios
+category: swift
 tags: [swift]
 ---
 {% include JB/setup %}
