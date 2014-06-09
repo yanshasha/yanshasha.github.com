@@ -2,25 +2,28 @@
  * @author yanshasha
  */
 $('.show-en').on('click',function(){
-    $('.ch').hide();
-    $('.en').show();
-    $('.show-ch').removeClass('active');
-    $('.show-both').removeClass('active');
-    $(this).addClass('active');
+    if($('.show-en').hasClass('active')){
+        $('.en').hide();
+        $('.show-en').html("查看原文").removeClass('active');
+    }else{
+        $('.en').show();
+        $('.show-en').html("收起原文").addClass('active');        
+    }
+    
 });
 
-$('.show-ch').on('click',function(){
-    $('.en').hide();
-    $('.ch').show();
-    $('.show-en').removeClass('active');
-    $('.show-both').removeClass('active');
-    $(this).addClass('active');
-});
-
-$('.show-both').on('click',function(){
-    $('.ch').show();
-    $('.en').show();
-    $('.show-en').removeClass('active');
-    $('.show-both').removeClass('active');
-    $(this).addClass('active');
-});
+// $('.show-ch').on('click',function(){
+    // $('.en').hide();
+    // $('.ch').show();
+    // $('.show-en').removeClass('active');
+    // $('.show-both').removeClass('active');
+    // $(this).addClass('active');
+// });
+// 
+// $('.show-both').on('click',function(){
+    // $('.ch').show();
+    // $('.en').show();
+    // $('.show-en').removeClass('active');
+    // $('.show-both').removeClass('active');
+    // $(this).addClass('active');
+// });

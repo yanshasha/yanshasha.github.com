@@ -576,22 +576,22 @@ td, th {
 /*中英文切换：begin*/
 .en{
     display:none;
+    color:green;
 }
 .en,.ch{
     margin-bottom:10px;
 }
-.show-en,.show-ch,.show-both{
-    display:inline-block;
-    font-size:15px;
-    margin-right:20px;   
+.show-en{
+    font-size:15px; 
     text-decoration:none;
     color:#0088cc;
     cursor:pointer;
+    text-align:right;
+    padding-right:15px;
 }
 
-.show-en.active,.show-ch.active,.show-both.active{    
+.show-en:hover{    
     text-decoration:underline;
-    color:#333;
 }
 /*中英文切换：end*/
     

@@ -1,18 +1,13 @@
 ---
 layout: post
-title: "Swift Guide:-The Basics（中/英）-Constants and Variables"
+title: "Swift语言基础-常量和变量"
 description: ""
 category: swift
 tags: [swift]
 ---
 {% include JB/setup %}
 
-
-<span class="show-ch active">中</span>
-<span class="show-en">英</span>
-<span class="show-both">中&英</span>
-
-
+<div class="show-en">查看原文</div>
 
 <div class="en">
 Constants and variables associate a name (such as maximumNumberOfLoginAttempts or welcomeMessage) with a value of a particular type (such as the number 10 or the string "Hello"). The value of a constant cannot be changed once it is set, whereas a variable can be set to a different value in the future.
@@ -28,7 +23,7 @@ Constants and variables associate a name (such as maximumNumberOfLoginAttempts o
 Constants and variables must be declared before they are used. You declare constants with the let keyword and variables with the var keyword. Here’s an example of how constants and variables can be used to track the number of login attempts a user has made:
 </div>
 <div class="ch">
-常量和变量在使用前必须被申明。使用关键字`let`声明常量，`var`声明变量。下面的例子展示了常量和变量如何用于跟踪用户尝试登录的次数。
+常量和变量在使用前必须被申明。使用关键字`let`声明常量，`var`声明变量。下例展示了常量和变量如何用于跟踪用户尝试登录的次数。
 </div>
  
 	let maximumNumberOfLoginAttempts = 10
@@ -69,7 +64,7 @@ You can provide a type annotation when you declare a constant or variable, to be
 This example provides a type annotation for a variable called welcomeMessage, to indicate that the variable can store String values:
 </div>
 <div class="ch">
-在声明一个常量或变量时，可以为其提供类型说明（type annotation），以此指明这个常量或变量值的类型。类型说明的写法为：在常量或变量名后面紧跟一个分号，一个空格和要使用的类型名称。
+在声明一个常量或变量时，可以为其提供类型说明（type annotation），以此指明这个常量或变量值的类型。类型说明的写法为：在常量或变量名后面紧跟一个冒号，一个空格和要使用的类型名称。
 本例为一个名为welcomeMessage的变量提供了类型说明，指明其可以存储String类型的值。
 </div>
 
@@ -92,8 +87,8 @@ The welcomeMessage variable can now be set to any string value without error:
 
 	welcomeMessage = "Hello"
 
-><div class="en">NOTE：It is rare that you need to write type annotations in practice. If you provide an initial value for a constant or variable at the point that it is defined, Swift can almost always infer the type to be used for that constant or variable, as described in Type Safety and Type Inference. In the welcomeMessage example above, no initial value is provided, and so the type of the welcomeMessage variable is specified with a type annotation rather than being inferred from an initial value.</div>
-<div class="ch">注：在实践中很少会需要主动的去写类型说明。因为如果你在定义一个常量或变量时赋予了初始值，Swift通常能自己推断出该常量或变量的类型，详情可参见“Type Safety and Type Inference”部分。在上面关于welcomeMessage的例子中，由于没有提供任何初始值，所以才需要通过类型说明来制定welcomeMessage变量的类型，而不是通过初始值判断。</div>
+><div class="en">NOTE：It is rare that you need to write type annotations in practice. If you provide an initial value for a constant or variable at the point that it is defined, Swift can almost always infer the type to be used for that constant or variable, as described in Type Safety and Type Inference. In the `welcomeMessage` example above, no initial value is provided, and so the type of the `welcomeMessage` variable is specified with a type annotation rather than being inferred from an initial value.</div>
+<div class="ch">注：在实践中很少会需要主动的去写类型说明。因为如果你在定义一个常量或变量时赋予了初始值，Swift通常能自己推断出该常量或变量的类型，详情可参见“Type Safety and Type Inference”部分。在上面关于`welcomeMessage`的例子中，由于没有提供任何初始值，所以才需要通过类型说明来制定`welcomeMessage`变量的类型，而不是通过初始值判断。</div>
 
 
 <h2 class="en">Naming Constants and Variables</h2>
@@ -112,7 +107,7 @@ You can use almost any character you like for constant and variable names, inclu
 	 
 	let 🐶🐮 = "dogcow"
  
->译者注：最后那个let后面跟的是一个狗头和一个牛头额...原谅偶不晓得如何打出来啊...
+>译者注：下面那个let后面跟的是一个狗头和一个牛头额...原谅偶不晓得如何打出来啊...
 
 <div class="en">
 Constant and variable names cannot contain mathematical symbols, arrows, private-use (or invalid) Unicode code points, or line- and box-drawing characters. Nor can they begin with a number, although numbers may be included elsewhere within the name.
@@ -196,7 +191,10 @@ Swift 通过`string interpolation`将常量或变量的名称作为占位符内�
 
 
 ><div class="en">NOTE：All options you can use with string interpolation are described in String Interpolation.</div>
-<div class="ch">注：关于String Interpolation的内容在后面会有详述。</div>
+注：关于`String Interpolation`的内容在后面会有详述。
+
+
+
 
 
 
