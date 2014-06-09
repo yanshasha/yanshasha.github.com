@@ -155,7 +155,18 @@ pre {
 	overflow-y: hidden;
 	margin: 20px 2em;
 }
-
+sub, sup {
+position: relative;
+font-size: 75%;
+line-height: 0;
+vertical-align: baseline;
+}
+sup {
+top: -0.5em;
+}
+sup {
+bottom: -0.5em;
+}
 /* Tables */
 
 table {
