@@ -42,10 +42,9 @@ Optionals are an example of the fact that Swift is a type safe language. Swift h
 
 
 
-[Constants and Variables]()
-[Swift语言基础-常量和变量]()
-[Swift语言基础-注释&分号]()
-[Swift语言基础-整数]()
+[Swift语言基础-常量和变量](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Constants-and-Variables/)
+[Swift语言基础-注释&分号](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Comments-and-Semicolons/)
+[Swift语言基础-整数](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Integers/)
 [Swift语言基础-浮点数]()
 [Swift语言基础-类型安全及类型推断]()
 []()
