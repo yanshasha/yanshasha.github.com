@@ -4,10 +4,10 @@
 $('.show-en').on('click',function(){
     if($('.show-en').hasClass('active')){
         $('.en').hide();
-        $('.show-en').html("查看原文").removeClass('active');
+        $('.show-en').html("中英对照").removeClass('active');
     }else{
         $('.en').show();
-        $('.show-en').html("收起原文").addClass('active');        
+        $('.show-en').html("隐藏英文").addClass('active');        
     }
     
 });

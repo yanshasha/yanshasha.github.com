@@ -7,7 +7,7 @@ tags: [swift]
 ---
 {% include JB/setup %}
 
-<div class="show-en">查看原文</div>
+<div class="show-en">中英对照</div>
 
 <div class="en">
 Constants and variables associate a name (such as maximumNumberOfLoginAttempts or welcomeMessage) with a value of a particular type (such as the number 10 or the string "Hello"). The value of a constant cannot be changed once it is set, whereas a variable can be set to a different value in the future.
