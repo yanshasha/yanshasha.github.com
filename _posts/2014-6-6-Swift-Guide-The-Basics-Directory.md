@@ -42,12 +42,12 @@ Optionals are an example of the fact that Swift is a type safe language. Swift h
 
 
 
-[Swift语言基础-常量和变量](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Constants-and-Variables/)
-[Swift语言基础-注释&分号](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Comments-and-Semicolons/)
-[Swift语言基础-整数](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Integers/)
-[Swift语言基础-浮点数](http://yanshasha.com/2014/06/07/Swift-Guide-The-Basics-Floating-Point-Numbers/)
-[Swift语言基础-类型安全及类型推断](http://yanshasha.com/2014/06/07/Swift-Guide-The-Basics-Type-Safety-and-Type-Inference/)
-[Swift语言基础-数字字面量](http://yanshasha.com/2014/06/08/Swift-Guide-The-Basics-Numeric-Literals/)
+1. [Swift语言基础-常量和变量](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Constants-and-Variables/)
+2. [Swift语言基础-注释&分号](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Comments-and-Semicolons/)
+3. [Swift语言基础-整数](http://yanshasha.com/2014/06/06/Swift-Guide-The-Basics-Integers/)
+4. [Swift语言基础-浮点数](http://yanshasha.com/2014/06/07/Swift-Guide-The-Basics-Floating-Point-Numbers/)
+5. [Swift语言基础-类型安全及类型推断](http://yanshasha.com/2014/06/07/Swift-Guide-The-Basics-Type-Safety-and-Type-Inference/)
+6. [Swift语言基础-数字字面量](http://yanshasha.com/2014/06/08/Swift-Guide-The-Basics-Numeric-Literals/)
 
 
 
