@@ -113,7 +113,7 @@ Constant and variable names cannot contain mathematical symbols, arrows, private
 Once you’ve declared a constant or variable of a certain type, you can’t redeclare it again with the same name, or change it to store values of a different type. Nor can you change a constant into a variable or a variable into a constant.
 </p>
 
->注：如果需要将常量或变量命名为Swift的保留字，可以通过用一对反引号（```）包围来实现。尽管如此，还是应该尽量避免使用关键字作为名称，除非你没有其他选择。<p class="en">NOTE：If you need to give a constant or variable the same name as a reserved Swift keyword, you can do so by surrounding the keyword with back ticks (`) when using it as a name. However, you should avoid using keywords as names unless you have absolutely no choice.</p>
+>注：如果需要将常量或变量命名为Swift的保留字，可以通过用一对反引号（`）包围来实现。尽管如此，还是应该尽量避免使用关键字作为名称，除非你没有其他选择。<p class="en">NOTE：If you need to give a constant or variable the same name as a reserved Swift keyword, you can do so by surrounding the keyword with back ticks (`) when using it as a name. However, you should avoid using keywords as names unless you have absolutely no choice.</p>
 
 变量的值可以随时改变，只要类型一致。下例中，`friendlyWelcome`变量的值从`"Hello!"`变成了`"Bonjour!"`。
 
